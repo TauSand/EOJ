@@ -8,6 +8,7 @@ body, html {
   margin: 0;
   padding: 0;
 }
+
 .header {
 
   height: 62px;
@@ -18,7 +19,7 @@ body, html {
   background-color: @HeaderColor;
   color: @HeaderText;
   border-bottom: 1px solid @HeaderBottomBorder;
-  box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.5);
 
   .menubuttons {
     position: absolute;
@@ -42,28 +43,44 @@ body, html {
 }
 
 .sidebar {
-  position:fixed;
-  top: 0;
-  left: -10px;
-  width: 0;
-  overflow: hidden;
-  bottom: 0;
-  width: 0px;
-  background-color: white;
-
-  &.open {
+  color: black;
+  .close {
+    margin: 10px;
+  }
+  .sidebarContainer {
+    position: fixed;
+    top: 0;
+    left: -10px;
+    width: 0;
+    overflow: hidden;
+    bottom: 0;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s;
+    overflow: hidden;
+  }
+  ul {
     width: 300px;
-    left: 0;
-
-    &:after {
-      content: '';
+    float: right;
+  }
+  .hider {
+    background-color: rgba(0, 0, 0, 0);
+    transition: background 0.5s;
+  }
+  &.open {
+    .sidebarContainer {
+      width: 300px;
+      left: 0;
+    }
+    .hider {
       display: block;
       position: fixed;
       left: 0;
       right: 0;
       top: 0;
       bottom: 0;
-      background-color: rgba(0,0,0,0.3);
+      background-color: rgba(0, 0, 0, 0.2);
     }
   }
 }

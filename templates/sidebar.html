@@ -1,8 +1,11 @@
-<div class="sidebar {{open === 'true' ? 'open' : 'closed'}}">
-    <ul class="list-unstyled">
+<div class="sidebar {{open ? 'open' : 'closed'}}">
+    <div class="hider" ng-click="close()"></div>
+    <div class="sidebarContainer">
+        <i class="fa fa-times fa-2x close" ng-click="close()"></i>
+        <ul class="list-unstyled">
         <li>Medicinkort</li>
         <li>Livshistorie</li>
         <li>Helhedsvurdering</li>
-        <li>{{open}}</li>
+    </div>
     </ul>
 </div>

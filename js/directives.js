@@ -1,25 +1,30 @@
 var directives = angular.module('directives', []);
 
-directives.directive('header', function() {
+directives.directive('header', function () {
     return {
         scope: {},
         restrict: 'E',
         templateUrl: 'templates/header.html',
-        link: function(scope, elem, attrs) {
-            scope.open = "hello";
-            scope.openClick = function() {
-                scope.open = !scope.open
+        link: function (scope, elem, attrs) {
+            scope.open = false;
+            scope.openClick = function () {
+                scope.open = true;
             }
         }
     }
 });
 
-directives.directive('sidebar', function() {
+directives.directive('sidebar', function () {
     return {
         scope: {
-            open: '@'
+            open: '='
         },
         restrict: 'E',
-        templateUrl: 'templates/sidebar.html'
+        templateUrl: 'templates/sidebar.html',
+        link: function (scope, elem, attrs) {
+            scope.close = function () {
+                scope.open = false;
+            }
+        }
     }
 });
