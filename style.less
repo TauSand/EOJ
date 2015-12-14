@@ -47,8 +47,11 @@ body, html {
   .close {
     margin: 10px;
   }
-  .sidebarContainer {
+  &.open .sidebarContainer {
     box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.3);
+  }
+  .sidebarContainer {
+    box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.0);
     position: fixed;
     z-index: 9999999;
     top: 0;
