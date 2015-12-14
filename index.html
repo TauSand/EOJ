@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css" />
     <link rel="stylesheet/less" href="style.less" />
+    <script type="application/javascript" src="jslib/pouchdb-5.1.0.min.js"></script>
     <script type="application/javascript" src="jslib/jquery-2.1.4.min.js"></script>
     <script type="application/javascript" src="jslib/underscore.js"></script>
     <script type="application/javascript" src="jslib/angular.js"></script>
@@ -12,13 +13,20 @@
     <script type="application/javascript" src="js/controllers.js"></script>
     <script type="application/javascript" src="js/directives.js"></script>
     <script type="application/javascript" src="jslib/less.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,300,600italic,700,800,700italic,800italic' rel='stylesheet' type='text/css'>
     <title>EOJ</title>
 </head>
 <body ng-controller="controller">
 {{name}}
 <header></header>
 <notificationbar></notificationbar>
-<h3>Hello</h3>
+<card-container>
+    <card>
+        <h3>Arbejdsopgaver</h3>
+        <h4></h4>
+    </card>
+</card-container>
 </body>
 
 </html>

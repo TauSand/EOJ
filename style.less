@@ -1,7 +1,9 @@
 @HeaderColor: #02aeff;
 @HeaderText: white;
 @HeaderBottomBorder: #4dccec;
-@background: rgba(151, 151, 151, 0.15);
+@background: #EFEFEF;
+
+@import "templates/header/header";
 
 body, html {
   background-color: @background;
@@ -9,87 +11,9 @@ body, html {
   padding: 0;
 }
 
-.header {
-
-  height: 62px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: @HeaderColor;
-  color: @HeaderText;
-  border-bottom: 1px solid @HeaderBottomBorder;
-  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.5);
-
-  .menubuttons {
-    position: absolute;
-    width: 50px;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    i {
-      font-size: 30px;
-      padding: 7px;
-      padding-top: 17px;
-    }
-
-  }
-  .citizen-name {
-    margin-left: 105px;
-    padding-top: 15px;
-
-    font-size: 1.7em;
-  }
+body {
+  padding-top: 119px;
 }
-
-.sidebar {
-  color: black;
-  .close {
-    margin: 10px;
-  }
-  &.open .sidebarContainer {
-    box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.3);
-  }
-  .sidebarContainer {
-    box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.0);
-    position: fixed;
-    z-index: 9999999;
-    top: 0;
-    left: -10px;
-    width: 0;
-    overflow: hidden;
-    bottom: 0;
-    background-color: white;
-    margin: 0;
-    padding: 0;
-    transition: all 0.5s;
-    overflow: hidden;
-  }
-  ul {
-    width: 300px;
-    float: right;
-  }
-  .hider {
-    background-color: rgba(0, 0, 0, 0);
-    transition: background 0.5s;
-  }
-  &.open {
-    .sidebarContainer {
-      width: 300px;
-      left: 0;
-    }
-    .hider {
-      display: block;
-      position: fixed;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.2);
-    }
-  }
-}
-
 
 .notificationbar {
   display: block;
@@ -99,9 +23,8 @@ body, html {
   left: 0;
   right: 0;
   background-color: white;
-  box-shadow: 2px 2px 1px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
-
 
 .barbutton {
   position: relative;
@@ -136,9 +59,26 @@ body, html {
     border: solid 2px;
     border-color: white;
   }
+}
 
+.cardcontainer {
+  overflow-y: auto;
+  .card {
+    width: 45%;
+    margin: 1%;
+    float: left;
+    background-color: white;
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    padding: 1%;
+  }
+}
 
+body {
+  font-family: 'lato', sans-serif;
+}
 
-
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
 
 }
