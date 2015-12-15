@@ -1,6 +1,11 @@
 angular.module('tabsModule', [])
     .controller('tabController', ['$scope', function(scope) {
         scope.sizes = {};
+        scope.selections = {};
+        scope.selections.selectedTab = 1;
+
+
+
     }])
 
     .service('countChildren', function () {
@@ -17,12 +22,8 @@ angular.module('tabsModule', [])
         return {
             scope: {},
             restrict: 'E',
-            transclude: true,
-            templateUrl: 'templates/tabs/notificationbar.html',
-            link: function (scope, elem, attr) {
-                console.log("notificationbar: " + countChildren.count(elem))
-                var numOfChildren = countChildren.count(elem);
-            }
+            transclude: true, templateUrl: 'templates/tabs/notificationbar.html',
+
         }
     }])
 
@@ -30,10 +31,17 @@ angular.module('tabsModule', [])
         return {
             scope: {
                 icon: '@',
-                notifications: '@'
+                notifications: '@',
+                tabNumber: '@'
             },
             restrict: 'E',
-            templateUrl: 'templates/tabs/barbutton.html'
+            templateUrl: 'templates/tabs/barbutton.html',
+            link: function(scope) {
+                console.log(scope);
+                scope.onClick = function () {
+                    window.alert('click')
+                }
+            }
         }
     })
 
@@ -46,8 +54,8 @@ angular.module('tabsModule', [])
                 var children = element.children().children().children().length;
                 scope.sizes.tabsWidth = (100 / children) + "%";
                 scope.sizes.width = (100 *  children)+ "%";
-                console.log("tabcontainer");
-                console.log(scope);
+/*                console.log("tabcontainer");
+                console.log(scope);*/
             }
         }
     })
@@ -58,8 +66,8 @@ angular.module('tabsModule', [])
             restrict: 'E',
             templateUrl: 'templates/tabs/tab.html',
             link: function(scope) {
-                console.log("tab");
-                console.log(scope);
+/*                console.log("tab");
+                console.log(scope);*/
             }
         }
     });
