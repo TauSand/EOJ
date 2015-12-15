@@ -1,13 +1,16 @@
 angular.module('tabsModule', [])
-    .controller()
+    .controller('tabController', ['$scope', function(scope) {
+        scope.sizes = {};
+    }])
 
-    .factory('countChildren', function () {
-        var id = 0;
+    .service('countChildren', function () {
+        var childrenCount = 0;
         return {
-            tau: function(param1, param2) {console.log(id++)},
-            daniela: function() {console.log(id++)}
+            count: function (element) {
+                childrenCount = element.children().children().length;
+                return childrenCount;
+            }
         }
-
     })
 
     .directive('notificationbar', ['countChildren', function (countChildren) {
@@ -17,13 +20,8 @@ angular.module('tabsModule', [])
             transclude: true,
             templateUrl: 'templates/tabs/notificationbar.html',
             link: function (scope, elem, attr) {
-                console.log(elem);
-                console.log(scope);
-                countChildren.tau("hej", "tau");
-                countChildren.daniela()
-            },
-            controller: function () {
-
+                console.log("notificationbar: " + countChildren.count(elem))
+                var numOfChildren = countChildren.count(elem);
             }
         }
     }])
@@ -41,20 +39,28 @@ angular.module('tabsModule', [])
 
     .directive('tabscontainer', function () {
         return {
-            scope: {},
             restrict: 'E',
             transclude: true,
-            templateUrl: 'templates/tabs/tabscontainer.html'
+            templateUrl: 'templates/tabs/tabscontainer.html',
+            link: function(scope, element) {
+                var children = element.children().children().children().length;
+                scope.sizes.tabsWidth = (100 / children) + "%";
+                scope.sizes.width = (100 *  children)+ "%";
+                console.log("tabcontainer");
+                console.log(scope);
+            }
         }
     })
 
     .directive('tab', function () {
         return {
-            scope: {
-                tabname: '@'
-            },
+            transclude: true,
             restrict: 'E',
-            templateUrl: 'templates/tabs/tab.html'
+            templateUrl: 'templates/tabs/tab.html',
+            link: function(scope) {
+                console.log("tab");
+                console.log(scope);
+            }
         }
     });
 
