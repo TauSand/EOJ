@@ -15,10 +15,10 @@ angular.module('tabsModule', [])
             scope: {},
             restrict: 'E',
             transclude: true,
-            templateUrl: 'templates/notificationbar.html',
+            templateUrl: 'templates/tabs/notificationbar.html',
             link: function (scope, elem, attr) {
                 console.log(elem);
-                console.llog(scope);
+                console.log(scope);
                 countChildren.tau("hej", "tau");
                 countChildren.daniela()
             },
@@ -35,7 +35,7 @@ angular.module('tabsModule', [])
                 notifications: '@'
             },
             restrict: 'E',
-            templateUrl: 'templates/barbutton.html'
+            templateUrl: 'templates/tabs/barbutton.html'
         }
     })
 
@@ -44,7 +44,7 @@ angular.module('tabsModule', [])
             scope: {},
             restrict: 'E',
             transclude: true,
-            templateUrl: 'templates/tabscontainer.html'
+            templateUrl: 'templates/tabs/tabscontainer.html'
         }
     })
 
@@ -54,7 +54,7 @@ angular.module('tabsModule', [])
                 tabname: '@'
             },
             restrict: 'E',
-            templateUrl: 'templates/tab.html'
+            templateUrl: 'templates/tabs/tab.html'
         }
     });
 
