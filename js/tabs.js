@@ -1,42 +1,62 @@
-var tabsModule = angular.module('tabsModule', []);
+angular.module('tabsModule', [])
+    .controller()
 
-tabsModule.directive('notificationbar', function () {
-    return {
-        scope: {},
-        restrict: 'E',
-        transclude: true,
-        templateUrl: 'templates/notificationbar.html'
-    }
-});
+    .factory('countChildren', function () {
+        var id = 0;
+        return {
+            tau: function(param1, param2) {console.log(id++)},
+            daniela: function() {console.log(id++)}
+        }
+
+    })
+
+    .directive('notificationbar', ['countChildren', function (countChildren) {
+        return {
+            scope: {},
+            restrict: 'E',
+            transclude: true,
+            templateUrl: 'templates/notificationbar.html',
+            link: function (scope, elem, attr) {
+                console.log(elem);
+                console.llog(scope);
+                countChildren.tau("hej", "tau");
+                countChildren.daniela()
+            },
+            controller: function () {
+
+            }
+        }
+    }])
+
+    .directive('barbutton', function () {
+        return {
+            scope: {
+                icon: '@',
+                notifications: '@'
+            },
+            restrict: 'E',
+            templateUrl: 'templates/barbutton.html'
+        }
+    })
+
+    .directive('tabscontainer', function () {
+        return {
+            scope: {},
+            restrict: 'E',
+            transclude: true,
+            templateUrl: 'templates/tabscontainer.html'
+        }
+    })
+
+    .directive('tab', function () {
+        return {
+            scope: {
+                tabname: '@'
+            },
+            restrict: 'E',
+            templateUrl: 'templates/tab.html'
+        }
+    });
 
 
-tabsModule.directive('barbutton', function () {
-    return {
-        scope: {
-            icon: '@',
-            notifications: '@'
-        },
-        restrict: 'E',
-        templateUrl: 'templates/barbutton.html'
-    }
-});
-
-tabsModule.directive('tabscontainer', function () {
-    return {
-        scope: {},
-        restrict: 'E',
-        transclude: true,
-        templateUrl: 'templates/tabscontainer.html'
-    }
-});
-
-tabsModule.directive('tab', function () {
-    return {
-                scope: {
-         tabname : '@'
-         } ,
-        restrict: 'E',
-        templateUrl: 'templates/tab.html'
-    }
-});
 
