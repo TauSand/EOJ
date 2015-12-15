@@ -1,1 +1,1 @@
-angular.module('EOJ', ['controllers', 'directives', 'tabsModule']);
+angular.module('EOJ', ['controllers', 'header', 'tabsModule']);

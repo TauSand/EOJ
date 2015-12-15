@@ -1,10 +1,10 @@
-var directives = angular.module('directives', []);
+var header = angular.module('header', []);
 
-directives.directive('header', function () {
+header.directive('header', function () {
     return {
         scope: {},
         restrict: 'E',
-        templateUrl: 'templates/header.html',
+        templateUrl: 'templates/header/header.html',
         link: function (scope, elem, attrs) {
             scope.open = false;
             scope.openClick = function () {
@@ -14,13 +14,13 @@ directives.directive('header', function () {
     }
 });
 
-directives.directive('sidebar', function () {
+header.directive('sidebar', function () {
     return {
         scope: {
             open: '='
         },
         restrict: 'E',
-        templateUrl: 'templates/sidebar.html',
+        templateUrl: 'templates/header/sidebar.html',
         link: function (scope, elem, attrs) {
             scope.close = function () {
                 scope.open = false;
@@ -28,4 +28,3 @@ directives.directive('sidebar', function () {
         }
     }
 });
-
