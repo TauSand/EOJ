@@ -2,9 +2,9 @@
 <html ng-app="EOJ">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css" />
-    <link rel="stylesheet/less" href="style.less" />
+    <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet/less" href="style.less"/>
     <script type="application/javascript" src="jslib/jquery-2.1.4.min.js"></script>
     <script type="application/javascript" src="jslib/underscore.js"></script>
     <script type="application/javascript" src="jslib/angular.js"></script>
@@ -20,24 +20,30 @@
 <header></header>
 
 
-<notificationbar id="periferalAwarenessBar">
+<notificationbar>
     <barbutton icon="fa fa-user-md"></barbutton>
     <barbutton icon="fa fa fa-hospital-o" notifications="3"></barbutton>
     <barbutton icon="fa fa-users"></barbutton>
     <barbutton icon="fa fa-heartbeat"></barbutton>
-    <barbutton icon="fa fa-envelope" notifications="5"></barbutton>
     <barbutton icon="fa fa-stethoscope"></barbutton>
-    <barbutton icon="fa fa-medkit"></barbutton>
 </notificationbar>
 
-<tabscontainer>
-    <tab tabname="tab1"></tab>
-    <tab tabname="tab2"></tab>
-    <tab tabname="tab3"></tab>
-    <tab tabname="tab4"></tab>
-    <tab tabname="tab5"></tab>
 
-</tabscontainer>
+<div ng-controller="tabController">
+    <tabscontainer>
+        <tab>Tab1</tab>
+        <tab>Tab2</tab>
+        <tab>Tab3</tab>
+        <tab>Tab4</tab>
+        <tab>Tab5</tab>
+        <tab>Tab1</tab>
+        <tab>Tab2</tab>
+        <tab>Tab3</tab>
+        <tab>Tab4</tab>
+        <tab>Tab5</tab>
+    </tabscontainer>
+
+</div>
 
 <h3>Hello</h3>
 </body>
