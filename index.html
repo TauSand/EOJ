@@ -11,13 +11,34 @@
     <script type="application/javascript" src="js/app.js"></script>
     <script type="application/javascript" src="js/controllers.js"></script>
     <script type="application/javascript" src="js/directives.js"></script>
+    <script type="application/javascript" src="js/tabs.js"></script>
     <script type="application/javascript" src="jslib/less.js"></script>
     <title>EOJ</title>
 </head>
 <body ng-controller="controller">
 {{name}}
 <header></header>
-<notificationbar></notificationbar>
+
+
+<notificationbar id="periferalAwarenessBar">
+    <barbutton icon="fa fa-user-md"></barbutton>
+    <barbutton icon="fa fa fa-hospital-o" notifications="3"></barbutton>
+    <barbutton icon="fa fa-users"></barbutton>
+    <barbutton icon="fa fa-heartbeat"></barbutton>
+    <barbutton icon="fa fa-envelope" notifications="5"></barbutton>
+    <barbutton icon="fa fa-stethoscope"></barbutton>
+    <barbutton icon="fa fa-medkit"></barbutton>
+</notificationbar>
+
+<tabscontainer>
+    <tab tabname="tab1"></tab>
+    <tab tabname="tab2"></tab>
+    <tab tabname="tab3"></tab>
+    <tab tabname="tab4"></tab>
+    <tab tabname="tab5"></tab>
+
+</tabscontainer>
+
 <h3>Hello</h3>
 </body>
 

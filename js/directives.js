@@ -29,22 +29,3 @@ directives.directive('sidebar', function () {
     }
 });
 
-directives.directive('notificationbar', function () {
-    return {
-        scope: {},
-        restrict: 'E',
-        templateUrl: 'templates/notificationbar.html'
-    }
-});
-
-
-directives.directive('barbutton', function () {
-    return {
-        scope: {
-            icon: '@',
-            notifications: '@'
-        },
-        restrict: 'E',
-        templateUrl: 'templates/barbutton.html'
-    }
-});
