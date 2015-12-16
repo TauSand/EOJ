@@ -1,12 +1,11 @@
 angular.module('tabsModule', [])
-    .controller('tabController', ['$scope', function(scope) {
-        scope.sizes = {};
-        scope.selections = {};
-        scope.selections.selectedTab = 1;
-
-
-
-    }])
+    .controller('tabController', function ($scope) {
+        $scope.sizes = {};
+        $scope.selections = {
+            selectedTab: 0
+        };
+        $scope.parentProperty = "ciao";
+    })
 
     .service('countChildren', function () {
         var childrenCount = 0;
@@ -20,7 +19,6 @@ angular.module('tabsModule', [])
 
     .directive('notificationbar', ['countChildren', function (countChildren) {
         return {
-            scope: {},
             restrict: 'E',
             transclude: true, templateUrl: 'templates/tabs/notificationbar.html',
 
@@ -32,14 +30,15 @@ angular.module('tabsModule', [])
             scope: {
                 icon: '@',
                 notifications: '@',
-                tabNumber: '@'
+                tabNumber: '@',
+                selectedTab: '=',
+                selections: '='
             },
             restrict: 'E',
             templateUrl: 'templates/tabs/barbutton.html',
-            link: function(scope) {
-                console.log(scope);
+            link: function (scope) {
                 scope.onClick = function () {
-                    window.alert('click')
+                    scope.selections.selectedTab = scope.tabNumber
                 }
             }
         }
@@ -50,12 +49,12 @@ angular.module('tabsModule', [])
             restrict: 'E',
             transclude: true,
             templateUrl: 'templates/tabs/tabscontainer.html',
-            link: function(scope, element) {
+            link: function (scope, element) {
                 var children = element.children().children().children().length;
                 scope.sizes.tabsWidth = (100 / children) + "%";
-                scope.sizes.width = (100 *  children)+ "%";
-/*                console.log("tabcontainer");
-                console.log(scope);*/
+                scope.sizes.width = (100 * children) + "%";
+                /*                console.log("tabcontainer");
+                 console.log(scope);*/
             }
         }
     })
@@ -65,9 +64,8 @@ angular.module('tabsModule', [])
             transclude: true,
             restrict: 'E',
             templateUrl: 'templates/tabs/tab.html',
-            link: function(scope) {
-/*                console.log("tab");
-                console.log(scope);*/
+            link: function (scope) {
+                console.log(scope.tabNumber)
             }
         }
     });

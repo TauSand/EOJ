@@ -20,16 +20,22 @@
 <header></header>
 
 
-<div ng-controller="tabController">
+
+
+<div ng-app="tabsModule" ng-controller="tabController">
+
     <notificationbar>
-        <barbutton  tabNumber="1" icon="fa fa-user-md"></barbutton>
-        <barbutton  tabNumber="2" icon="fa fa fa-hospital-o" notifications="3"></barbutton>
-        <barbutton  tabNumber="3" icon="fa fa-users"></barbutton>
-        <barbutton  tabNumber="4" icon="fa fa-heartbeat"></barbutton>
-        <barbutton  tabNumber="5" icon="fa fa-stethoscope"></barbutton>
-        <barbutton  tabNumber="6" icon="fa fa-heartbeat"></barbutton>
-        <barbutton  tabNumber="7" icon="fa fa-stethoscope"></barbutton>
+        <barbutton selected-tab="selectedTab" selections="selections" tab-number="0" icon="fa fa-user-md"></barbutton>
+        <barbutton selected-tab="selectedTab" selections="selections" tab-number="1" icon="fa fa fa-hospital-o" notifications="3"></barbutton>
+        <barbutton selected-tab="selectedTab" selections="selections" tab-number="2" icon="fa fa-users"></barbutton>
+        <barbutton selected-tab="selectedTab" selections="selections" tab-number="3" icon="fa fa-heartbeat"></barbutton>
+        <barbutton selected-tab="selectedTab" selections="selections" tab-number="4" icon="fa fa-stethoscope"></barbutton>
+        <barbutton selected-tab="selectedTab" selections="selections" tab-number="5" icon="fa fa-heartbeat"></barbutton>
+        <barbutton selected-tab="selectedTab" selections="selections" tab-number="6" icon="fa fa-stethoscope"></barbutton>
     </notificationbar>
+
+
+
 
 
     <tabscontainer>
