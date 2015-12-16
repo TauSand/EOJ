@@ -2,7 +2,9 @@ var header = angular.module('header', []);
 
 header.directive('header', function () {
     return {
-        scope: {},
+        scope: {
+            name: '@'
+        },
         restrict: 'E',
         templateUrl: 'templates/header/header.html',
         link: function (scope, elem, attrs) {

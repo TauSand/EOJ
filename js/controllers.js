@@ -1,5 +1,12 @@
-var controllers = angular.module('controllers', []);
+var main = angular.module('main', ['databaseservice']);
 
-controllers.controller("controller", function($scope) {
-    $scope.tau = "hello"
+main.controller("mainController", function($scope, citizen) {
+    citizen.addListener(function(doc) {
+        $scope.citizen = doc;
+        $scope.$digest()
+    });
+    citizen.getCitizen().then (function(doc) {
+        $scope.citizen = doc;
+        $scope.$digest()
+    });
 });

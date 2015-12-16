@@ -1,1 +1,1 @@
-angular.module('EOJ', ['controllers', 'header', 'tabsModule']);
+angular.module('EOJ', ['databaseservice','main', 'header', 'tabsModule']);

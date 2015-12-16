@@ -10,16 +10,17 @@
     <script type="application/javascript" src="jslib/jquery-2.1.4.min.js"></script>
     <script type="application/javascript" src="jslib/underscore.js"></script>
     <script type="application/javascript" src="jslib/angular.js"></script>
+    <script type="application/javascript" src="jslib/pouchdb-5.1.0.min.js"></script>
     <script type="application/javascript" src="js/app.js"></script>
+    <script type="application/javascript" src="js/databaseservice.js"></script>
     <script type="application/javascript" src="js/controllers.js"></script>
     <script type="application/javascript" src="js/header.js"></script>
     <script type="application/javascript" src="js/tabs.js"></script>
     <script type="application/javascript" src="jslib/less.js"></script>
     <title>EOJ</title>
 </head>
-<body ng-controller="controller">
-{{name}}
-<header></header>
+<body ng-controller="mainController">
+<header name="{{citizen.name}}"></header>
 
 
 
