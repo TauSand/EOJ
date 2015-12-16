@@ -21,27 +21,32 @@
 <header name="{{citizen.name}}"></header>
 
 
-<notificationbar>
-    <barbutton icon="fa fa-user-md"></barbutton>
-    <barbutton icon="fa fa fa-hospital-o" notifications="3"></barbutton>
-    <barbutton icon="fa fa-users"></barbutton>
-    <barbutton icon="fa fa-heartbeat"></barbutton>
-    <barbutton icon="fa fa-stethoscope"></barbutton>
-</notificationbar>
 
 
-<div ng-controller="tabController">
+<div ng-app="tabsModule" ng-controller="tabController">
+
+    <notificationbar>
+        <barbutton selected-tab="selectedTab" selections="selections" tab-number="0" icon="fa fa-user-md"></barbutton>
+        <barbutton selected-tab="selectedTab" selections="selections" tab-number="1" icon="fa fa fa-hospital-o" notifications="3"></barbutton>
+        <barbutton selected-tab="selectedTab" selections="selections" tab-number="2" icon="fa fa-users"></barbutton>
+        <barbutton selected-tab="selectedTab" selections="selections" tab-number="3" icon="fa fa-heartbeat"></barbutton>
+        <barbutton selected-tab="selectedTab" selections="selections" tab-number="4" icon="fa fa-stethoscope"></barbutton>
+        <barbutton selected-tab="selectedTab" selections="selections" tab-number="5" icon="fa fa-heartbeat"></barbutton>
+        <barbutton selected-tab="selectedTab" selections="selections" tab-number="6" icon="fa fa-stethoscope"></barbutton>
+    </notificationbar>
+
+
+
+
+
     <tabscontainer>
         <tab>Tab1</tab>
         <tab>Tab2</tab>
         <tab>Tab3</tab>
         <tab>Tab4</tab>
         <tab>Tab5</tab>
-        <tab>Tab1</tab>
-        <tab>Tab2</tab>
-        <tab>Tab3</tab>
-        <tab>Tab4</tab>
-        <tab>Tab5</tab>
+        <tab>Tab6</tab>
+        <tab>Tab7</tab>
     </tabscontainer>
 
 </div>
