@@ -1,8 +1,43 @@
 @import "templates/tabs/tabs";
 @import "templates/header/header";
+@import "templates/careplan/careplan";
+
+html, body, p {
+  color: rgb(84, 72, 72);
+  font-family: Roboto, Helvetica, Arial, 'sans-serif';
+  font-size: 14.4px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 29.6px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: rgb(45, 37, 37);
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 body, html {
   background-color: @background;
   margin: 0;
   padding: 0;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  margin: 5px;
+  overflow: hidden;
 }

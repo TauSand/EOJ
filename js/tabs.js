@@ -1,7 +1,7 @@
 angular.module('tabsModule', [])
     .controller('tabController', function ($scope) {
         $scope.onTap = function () {
-            alert("onTap");
+
         }
         $scope.sizes = {};
         $scope.selections = {

@@ -1,12 +1,37 @@
 var main = angular.module('main', ['databaseservice']);
 
-main.controller("mainController", function($scope, citizen) {
-    citizen.addListener(function(doc) {
-        $scope.citizen = doc;
-        $scope.$digest()
+main.controller("mainController", function($scope, database) {
+    var MainRouter = Backbone.Router.extend({
+        routes: {
+            "borger/:name": 'setCitizenName',
+            "overblik": "setOverblik",
+            "overblik/*": "setOverblik"
+        },
+
+        setCitizenName: function(name) {
+            database.getDatabase().get(name).then(function(user) {
+                $scope.application.header = user.name;
+                $scope.application.showOverview = false;
+                $scope.$digest();
+            });
+        },
+
+        setOverblik: function() {
+            $scope.application.header = "Mit overblik";
+            $scope.application.showOverview = true ;
+            $scope.$digest();
+        }
+
     });
-    citizen.getCitizen().then (function(doc) {
-        $scope.citizen = doc;
-        $scope.$digest()
-    });
+    var mainRouter = new MainRouter();
+
+    $scope.application = {
+        header: "Mit overblik",
+        showOverview: true,
+        toOverview: function() {
+            console.log("hello");
+            mainRouter.navigate("/overblik", {trigger: true});
+        }
+    };
+
 });

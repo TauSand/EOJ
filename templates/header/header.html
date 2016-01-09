@@ -1,5 +1,17 @@
 <div class="header">
-    <div class="menubuttons" ng-click="openClick()"><i class="fa fa-bars"></i></div>
-    <div class="citizen-name">{{name}}</div>
-    <sidebar open="open"></sidebar>
+    <div class="container-fluid">
+        <div class="row" ng-if="showOverview">
+            <div class="col-md-12">
+                <div class="citizen-name">{{name}}</div>
+            </div>
+        </div>
+        <div class="row" ng-if="!showOverview">
+            <div class="col-md-1" ng-click="back()">
+                <div class="citizen-name"><i class="fa fa-arrow-left"></i></div>
+            </div>
+            <div class="col-md-11">
+                <div class="citizen-name">{{name}}</div>
+            </div>
+        </div>
+    </div>
 </div>

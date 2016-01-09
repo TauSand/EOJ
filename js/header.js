@@ -3,15 +3,17 @@ var header = angular.module('header', []);
 header.directive('header', function () {
     return {
         scope: {
-            name: '@'
+            name: '=',
+            showOverview: '=',
+            backClick: '='
         },
         restrict: 'E',
         templateUrl: 'templates/header/header.html',
         link: function (scope, elem, attrs) {
-            scope.onTap = function() {
-                alert("tap");
-            }
             scope.open = false;
+            scope.back = function() {
+                scope.backClick();
+            }
             scope.openClick = function () {
                 scope.open = true;
             }
