@@ -1,0 +1,24 @@
+<div class="Assesments container-fluid">
+    <div class="important-assesments row">
+        <div class="col-md-12">
+            <div ng-repeat="assesment in important">
+                    <div class="row assesment">
+                        <div class="col-md-3 category">{{assesment.category}}</div>
+                        <div class="col-md-6 name">{{assesment.name}}</div>
+                        <div class="col-md-3 score">{{assesment.score}}</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="all-assesments row">
+        <div class="col-md-12">
+            <div ng-repeat="assesment in all">
+                <div class="row assesment">
+                    <div class="col-md-3 category">{{assesment.category}}</div>
+                    <div class="col-md-6 name">{{assesment.name}}</div>
+                    <div class="col-md-3 score">{{assesment.score}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

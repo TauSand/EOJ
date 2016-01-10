@@ -29,7 +29,6 @@ main.controller("mainController", function($scope, database) {
         header: "Mit overblik",
         showOverview: true,
         toOverview: function() {
-            console.log("hello");
             mainRouter.navigate("/overblik", {trigger: true});
         }
     };

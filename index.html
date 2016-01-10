@@ -18,6 +18,7 @@
     <script type="application/javascript" src="js/careplan.js"></script>
     <script type="application/javascript" src="js/header.js"></script>
     <script type="application/javascript" src="js/tabs.js"></script>
+    <script type="application/javascript" src="js/assesment.js"></script>
     <script type="application/javascript" src="jslib/less.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
@@ -30,6 +31,7 @@
 
     <notificationbar>
         <barbutton selected-tab="selectedTab" selections="selections" tab-number="0" icon="fa fa-home"></barbutton>
+        <barbutton ng-if="!application.showOverview" selected-tab="selectedTab" selections="selections" tab-number="1" icon="fa fa-home"></barbutton>
     </notificationbar>
 
     <tabscontainer>
