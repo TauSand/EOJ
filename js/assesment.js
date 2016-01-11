@@ -1,45 +1,29 @@
-var assesment = angular.module('assesment', ['databaseservice']);
+var assesment = angular.module('assesment', ['databaseservice', 'router']);
 
-assesment.controller('assesmentController', function($scope, database) {
-    database.getDatabase().query({
-        map: function(doc) {
-            if(doc.type == "visit") {
-                emit(doc);
-            }
-        }
-    }, {inlcude_docs: true}).then(function(docs) {
-        var promises = _.map(docs.rows, function(row) {
-            return new Promise(function(fulfill, reject) {
-                var promise = database.getDatabase().get(row.key.citizen);
-                promise.then(function(citizen) {
-                    var result = row.key;
-                    result.citizen = citizen;
-                    fulfill(result);
-                }).catch(function(e) {
-                    reject(e);
-                });
+assesment.controller('assesmentController', function($scope, database, router) {
+    router.addToRoute.assesment(function() {
+        var pattern = /borger\/(\d+)/;
+        var citizen = pattern.exec(window.location.pathname)[1];
+        database.getDatabase().get(citizen).then(function(doc) {
 
-            });
-        });
-        Promise.all(promises).then(function(visits) {
-            var prevVisit;
-            var resultVisits = [];
-            _.each(visits, function(visit) {
-                if(prevVisit) {
-                    var start = prevVisit.end.split(":");
-                    var end = visit.start.split(":");
-                    resultVisits.push({
-                        transportationTime: (parseInt(end[0]) - parseInt(start[0])) * 60 + parseInt(end[1]) - parseInt(start[1])
-                    });
+            console.log(doc);
+
+            $scope.all = [];
+            _.each(doc.assesment, function(group) {
+                var category = group.title;
+                for(var i in group.assesments) {
+                    $scope.all.push({
+                        category: category,
+                        name: i,
+                        score: group.assesments[i]
+                    })
                 }
-                visit.open = function() {
-                    (new Backbone.Router()).navigate('borger/'+visit.citizen._id,{trigger: true});
-                }
-                resultVisits.push(visit);
-                prevVisit = visit;
-            });
-            $scope.visits = resultVisits;
-            $scope.$digest();
+            }),
+
+            setTimeout(function() {
+                console.log($scope.all);
+                $scope.$digest();
+            }, 10)
         });
 
     });
@@ -50,14 +34,8 @@ assesment.controller('assesmentController', function($scope, database) {
 assesment.directive('assesment', function () {
     return {
         restrict: 'E',
-        templateUrl: 'templates/careplan/careplan.html',
+        templateUrl: 'templates/assesment/assesment.html',
         link: function (scope, elem, attrs) {
-            scope.onTap = function() {
-            }
-            scope.open = false;
-            scope.openClick = function () {
-                scope.open = true;
-            }
         }
     }
 });

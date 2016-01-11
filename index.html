@@ -21,8 +21,10 @@
     <script type="application/javascript" src="js/assesment.js"></script>
     <script type="application/javascript" src="js/router.js"></script>
     <script type="application/javascript" src="jslib/less.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
+          rel='stylesheet' type='text/css'>
     <title>EOJ</title>
 </head>
 <body ng-controller="mainController">
@@ -32,39 +34,32 @@
 
     <notificationbar>
         <barbutton link="'overblik'" match="overview" icon="fa fa-home"></barbutton>
-        <barbutton ng-if="!application.showOverview" link="application.citizenAssesment" match="assesment" icon="fa fa-star"></barbutton>
+        <barbutton ng-if="!application.showOverview" link="application.citizenAssesment" match="assesment"
+                   icon="fa fa-star"></barbutton>
     </notificationbar>
 
     <tabscontainer>
         <tab match="overview">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-xs-6">
                         Home
                     </div>
-                    <div class="col-md-6" ng-controller="careplanController">
+                    <div class="col-xs-6" ng-controller="careplanController">
                         <careplan></careplan>
                     </div>
                 </div>
             </div>
         </tab>
         <tab match="assesment">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
-                        nto home
-                    </div>
-                    <div class="col-md-6" ng-controller="careplanController">
-                        <careplan></careplan>
-                    </div>
-                </div>
+            <div ng-controller="assesmentController">
+                <assesment></assesment>
             </div>
         </tab>
     </tabscontainer>
 
 </div>
 
-<h3>Hello</h3>
 </body>
 
 </html>

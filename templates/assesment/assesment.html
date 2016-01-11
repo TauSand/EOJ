@@ -1,22 +1,66 @@
 <div class="Assesments container-fluid">
-    <div class="important-assesments row">
-        <div class="col-md-12">
-            <div ng-repeat="assesment in important">
-                    <div class="row assesment">
-                        <div class="col-md-3 category">{{assesment.category}}</div>
-                        <div class="col-md-6 name">{{assesment.name}}</div>
-                        <div class="col-md-3 score">{{assesment.score}}</div>
+    <div class="important-assesments row card">
+        <div class="col-xs-12">
+            <h3>Relevante funktionsvurderinger</h3>
+            <div class="row tableheader">
+                <div class="col-xs-2 category">Kategori</div>
+                <div class="col-xs-5 name">Term</div>
+                <div class="col-xs-5 score">Vurdering</div>
+            </div>
+            <div class="assesment" ng-repeat="assesment in important">
+                <div class="row">
+                    <div class="col-xs-2 category">{{assesment.category}}</div>
+                    <div class="col-xs-5 name">{{assesment.name}}</div>
+                    <div class="col-md-1 col-sm-2 score-{{assesment.score}}">
+                        <i ng-if="assesment.score > 0" class="fa fa-circle"></i>
+                        <i ng-if="assesment.score > 1" class="fa fa-circle"></i>
+                        <i ng-if="assesment.score > 2" class="fa fa-circle"></i>
+                        <i ng-if="assesment.score > 3" class="fa fa-circle"></i>
+                        <i ng-if="assesment.score < 4"  class="fa fa-circle-o"></i>
+                        <i ng-if="assesment.score < 3"  class="fa fa-circle-o"></i>
+                        <i ng-if="assesment.score < 2"  class="fa fa-circle-o"></i>
+                        <i ng-if="assesment.score < 1" class="fa fa-circle-o"></i>
                     </div>
+                    <div class="col-md-4 col-sm-3 score">
+                        <div ng-if="assesment.score == 0"  class="score-0">Ingen begrænsninger</div>
+                        <div ng-if="assesment.score == 1"  class="score-1">Lette begrænsninger</div>
+                        <div ng-if="assesment.score == 2"  class="score-2">Moderate begrænsninger</div>
+                        <div ng-if="assesment.score == 3"  class="score-3">Svært begrænset</div>
+                        <div ng-if="assesment.score == 4"  class="score-4">Totalt begrænset</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="all-assesments row">
-        <div class="col-md-12">
-            <div ng-repeat="assesment in all">
-                <div class="row assesment">
-                    <div class="col-md-3 category">{{assesment.category}}</div>
-                    <div class="col-md-6 name">{{assesment.name}}</div>
-                    <div class="col-md-3 score">{{assesment.score}}</div>
+    <div class="all-assesments row card">
+        <div class="col-xs-12">
+            <h3>Fuld funktionsvurdering</h3>
+            <div class="row tableheader">
+                <div class="col-xs-2 category">Kategori</div>
+                <div class="col-xs-5 name">Term</div>
+                <div class="col-xs-5 score">Vurdering</div>
+            </div>
+            <div class="assesment" ng-repeat="assesment in all">
+                <div class="row">
+                    <div class="col-xs-2 category">{{assesment.category}}</div>
+                    <div class="col-xs-5 name">{{assesment.name}}</div>
+                    <div class="col-md-1 col-sm-2 score-{{assesment.score}}">
+                        <i ng-if="assesment.score > 0" class="fa fa-circle"></i>
+                        <i ng-if="assesment.score > 1" class="fa fa-circle"></i>
+                        <i ng-if="assesment.score > 2" class="fa fa-circle"></i>
+                        <i ng-if="assesment.score > 3" class="fa fa-circle"></i>
+                        <i ng-if="assesment.score < 4"  class="fa fa-circle-o"></i>
+                        <i ng-if="assesment.score < 3"  class="fa fa-circle-o"></i>
+                        <i ng-if="assesment.score < 2"  class="fa fa-circle-o"></i>
+                        <i ng-if="assesment.score < 1" class="fa fa-circle-o"></i>
+                    </div>
+                    <div class="col-md-4 col-sm-3 score">
+                        <div ng-if="assesment.score == 0"  class="score-0">Ingen begrænsninger</div>
+                        <div ng-if="assesment.score == 1"  class="score-1">Lette begrænsninger</div>
+                        <div ng-if="assesment.score == 2"  class="score-2">Moderate begrænsninger</div>
+                        <div ng-if="assesment.score == 3"  class="score-3">Svært begrænset</div>
+                        <div ng-if="assesment.score == 4"  class="score-4">Totalt begrænset</div>
+                    </div>
                 </div>
             </div>
         </div>
