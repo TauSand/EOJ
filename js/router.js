@@ -54,8 +54,8 @@
 
         addToRoute: {
             overview: generic("overblik"),
-            citizen: generic("borger/:id"),
-            assesment: generic("borger/:id/vurdering"),
+            visit: generic("besoeg/:id"),
+            assesment: generic("besoeg/:id/vurdering"),
             all: generic("all")
         }
 

@@ -33,7 +33,7 @@ careplan.controller('careplanController', function($scope, database) {
                     });
                 }
                 visit.open = function() {
-                    (new Backbone.Router()).navigate('borger/'+visit.citizen._id,{trigger: true});
+                    (new Backbone.Router()).navigate('besoeg/'+visit._id,{trigger: true});
                 }
                 resultVisits.push(visit);
                 prevVisit = visit;

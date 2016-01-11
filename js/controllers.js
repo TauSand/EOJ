@@ -3,8 +3,8 @@ var main = angular.module('main', ['databaseservice', 'router']);
 main.controller("mainController", function($scope, database, router) {
     router.scope = $scope;
     var setCitizenName = function(name) {
-        database.getDatabase().get(name).then(function(user) {
-            $scope.application.header = user.name;
+        database.getVisit(name).then(function(visit) {
+            $scope.application.header = visit.citizen.name;
             $scope.application.showOverview = false;
         });
     }
@@ -15,7 +15,7 @@ main.controller("mainController", function($scope, database, router) {
     }
 
     router.addToRoute.overview(setOverblik);
-    router.addToRoute.citizen(setCitizenName);
+    router.addToRoute.visit(setCitizenName);
 
 
     $scope.application = {
@@ -25,9 +25,9 @@ main.controller("mainController", function($scope, database, router) {
             router.navigate("/overblik", {trigger: true});
         },
         citizenAssesment: function() {
-            var pattern = /borger\/(\d+)/;
-            var citizen = pattern.exec(window.location.pathname)[1];
-            return "borger/" + citizen + "/vurdering"
+            var pattern = /besoeg\/(\d+)/;
+            var visit = pattern.exec(window.location.pathname)[1];
+            return "besoeg/" + visit + "/vurdering"
         }
     };
 

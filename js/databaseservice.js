@@ -31,6 +31,16 @@ function getDatabase(name) {
         },
         getDatabase: function () {
             return db;
+        },
+        getVisit: function(id) {
+            return new Promise(function(fulfill, reject) {
+                db.get(id).then(function(visit){
+                    db.get(visit.citizen).then(function(citizen) {
+                        visit.citizen = citizen;
+                        fulfill(visit);
+                    });
+                });
+            });
         }
     }
 }
@@ -41,6 +51,26 @@ function getInitData() {
             _id: '1',
             type: 'citizen',
             name: 'Egon Jensen',
+            assignments: [
+                {
+                    level3: 'Hjælp ud af sengen',
+                    level2: 'mobilitet',
+                    level1: ['Ændre kropsstilling'],
+                    comment: 'Hjælp til selvhjælp.'
+                },
+                {
+                    level3: 'Rehabilitering tandbørstning',
+                    level2: 'Personlig hygiejne',
+                    level1: ['Vaske sig', 'Kropspleje'],
+                    comment: 'Tilbyd evt. at børste hvis smerter er for store.'
+                },
+                {
+                    level3: 'Anrette morgenmad',
+                    level2: 'Tilberede/anrette mad',
+                    level1: ['Lave mad'],
+                    comment: 'Foretrækker rundstykke skåret op, anrettet med lidt smør, en skive ost og en kop kaffe.'
+                }
+            ],
             assesment: [
                 {
                     title: 'Praktiske opgaver',
@@ -104,6 +134,7 @@ function getInitData() {
         {
             _id: '3',
             type: 'visit',
+            assignments: [0,1,2],
             citizen: '1',
             start: '11:15',
             end: '11:55'
