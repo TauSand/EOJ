@@ -1,0 +1,8 @@
+<div class="Assignments card">
+    <h4>Opgaver</h4>
+    <div ng-repeat="assignment in assignments" class="assignment-outer">
+        <div ng-click="assignment.onClick()" class="assignment {{assignment.done ? 'done': ''}}">
+            <i ng-if="!assignment.done" class="fa fa-square-o fa-2x"></i><i ng-if="assignment.done" class="fa fa-check-square-o fa-2x"></i> <div class="text">{{assignment.level3}}</div>
+        </div>
+    </div>
+</div>

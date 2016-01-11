@@ -4,7 +4,7 @@
         <div class="visit" ng-click="visit.open()" ng-if="!visit.transportationTime">
             <div class="citizen-name">{{visit.citizen.name}}</div>
             <div class="interval">
-                Fra: <span class="time">{{visit.start}} <i class="fa fa-clock-o"></i></span>, til: <span class="time">{{visit.start}} <i class="fa fa-clock-o"></i></span>
+                Fra: <span class="time">{{visit.start}} <i class="fa fa-clock-o"></i></span>, til: <span class="time">{{visit.end}} <i class="fa fa-clock-o"></i></span>
             </div>
         </div>
         <div class="transportationTime" ng-if="visit.transportationTime">
