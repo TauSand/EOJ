@@ -1,77 +1,80 @@
-angular.module('tabsModule', [])
-    .controller('tabController', function ($scope) {
-        $scope.onTap = function () {
+(function () {
+    angular.module('tabsModule', ['router'])
+        .directive('notificationbar', function () {
+            return {
+                restrict: 'E',
+                transclude: true,
+                templateUrl: 'templates/tabs/notificationbar.html',
 
-        }
-        $scope.sizes = {};
-        $scope.selections = {
-            selectedTab: 0
-        };
-        $scope.parentProperty = "ciao";
-    })
-
-    .service('countChildren', function () {
-        var childrenCount = 0;
-        return {
-            count: function (element) {
-                childrenCount = element.children().children().length;
-                return childrenCount;
             }
-        }
-    })
+        })
 
-    .directive('notificationbar', ['countChildren', function (countChildren) {
-        return {
-            restrict: 'E',
-            transclude: true, templateUrl: 'templates/tabs/notificationbar.html',
+        .directive('barbutton', function (router) {
+            return {
+                scope: {
+                    icon: '@',
+                    notifications: '@',
+                    link: '=',
+                    match: '@'
+                },
+                restrict: 'E',
+                templateUrl: 'templates/tabs/barbutton.html',
+                link: function (scope) {
+                    scope.selected = false;
+                    router.addToRoute.all(function () {
+                        scope.selected = false;
+                    });
+                    router.addToRoute[scope.match](function () {
+                        scope.selected = true;
+                    });
 
-        }
-    }])
-
-    .directive('barbutton', function () {
-        return {
-            scope: {
-                icon: '@',
-                notifications: '@',
-                tabNumber: '@',
-                selectedTab: '=',
-                selections: '='
-            },
-            restrict: 'E',
-            templateUrl: 'templates/tabs/barbutton.html',
-            link: function (scope) {
-                scope.onClick = function () {
-                    scope.selections.selectedTab = scope.tabNumber
+                    scope.onClick = function () {
+                        var route = typeof scope.link == "function" ? scope.link() : scope.link;
+                        router.navigate(route, {trigger: true});
+                    }
                 }
             }
-        }
-    })
+        })
 
-    .directive('tabscontainer', function () {
-        return {
-            restrict: 'E',
-            transclude: true,
-            templateUrl: 'templates/tabs/tabscontainer.html',
-            link: function (scope, element) {
-                var children = element.children().children().children().length;
-                scope.sizes.tabsWidth = (100 / children) + "%";
-                scope.sizes.width = (100 * children) + "%";
-                /*                console.log("tabcontainer");
-                 console.log(scope);*/
-            }
-        }
-    })
+        .directive('tabscontainer', function () {
+            return {
+                scope: {},
+                restrict: 'E',
+                transclude: true,
+                templateUrl: 'templates/tabs/tabscontainer.html',
+                link: function (scope, element) {
+                    var children = element.children().children().children().length;
+                    scope.sizes = {
+                        tabsWidth: (100 / children) + "%",
+                        width: (100 * children) + "%"
+                    }
 
-    .directive('tab', function () {
-        return {
-            transclude: true,
-            restrict: 'E',
-            templateUrl: 'templates/tabs/tab.html',
-            link: function (scope) {
-                console.log(scope.tabNumber)
+                }
             }
-        }
-    });
+        })
+
+        .directive('tab', function (router) {
+            return {
+                scope: {
+                    'match': '@'
+                },
+                transclude: true,
+                restrict: 'E',
+                templateUrl: 'templates/tabs/tab.html',
+                link: function (scope, element) {
+                    router.addToRoute[scope.match](function() {
+                        element.parent().css({'margin-left': '-'+($(element).index()*100)+'%'})
+                    });
+                    var children = element.parent().children().length;
+                    scope.sizes = {
+                        tabsWidth: (100 / children) + "%",
+                    }
+                }
+
+            }
+        });
+})()
+
 
 
 

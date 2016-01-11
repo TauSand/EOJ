@@ -19,6 +19,7 @@
     <script type="application/javascript" src="js/header.js"></script>
     <script type="application/javascript" src="js/tabs.js"></script>
     <script type="application/javascript" src="js/assesment.js"></script>
+    <script type="application/javascript" src="js/router.js"></script>
     <script type="application/javascript" src="jslib/less.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
@@ -27,19 +28,31 @@
 <body ng-controller="mainController">
 <header back-click="application.toOverview" show-overview="application.showOverview" name="application.header"></header>
 
-<div ng-app="tabsModule" ng-controller="tabController">
+<div ng-app="tabsModule">
 
     <notificationbar>
-        <barbutton selected-tab="selectedTab" selections="selections" tab-number="0" icon="fa fa-home"></barbutton>
-        <barbutton ng-if="!application.showOverview" selected-tab="selectedTab" selections="selections" tab-number="1" icon="fa fa-home"></barbutton>
+        <barbutton link="'overblik'" match="overview" icon="fa fa-home"></barbutton>
+        <barbutton ng-if="!application.showOverview" link="application.citizenAssesment" match="assesment" icon="fa fa-star"></barbutton>
     </notificationbar>
 
     <tabscontainer>
-        <tab>
+        <tab match="overview">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
                         Home
+                    </div>
+                    <div class="col-md-6" ng-controller="careplanController">
+                        <careplan></careplan>
+                    </div>
+                </div>
+            </div>
+        </tab>
+        <tab match="assesment">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        nto home
                     </div>
                     <div class="col-md-6" ng-controller="careplanController">
                         <careplan></careplan>

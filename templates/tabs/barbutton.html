@@ -1,4 +1,4 @@
-<div class="barbutton {{(selections.selectedTab == tabNumber)? 'selected' : ''}}" ng-click="onClick()">
+<div class="barbutton {{selected}} {{selected ? 'selected' : ''}}" ng-click="onClick()">
     <i class="{{icon}}"></i>
     <div ng-if="notifications > 0" class="notification-container">
         {{notifications}}
