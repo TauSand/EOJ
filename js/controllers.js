@@ -6,18 +6,21 @@ main.controller("mainController", function($scope, database, router) {
         database.getVisit(name).then(function(visit) {
             $scope.application.header = visit.citizen.name;
             $scope.application.showOverview = false;
+            setTimeout(function() {$scope.$digest()}, 10);
         });
     }
 
     var setOverblik = function() {
         $scope.application.header = "Mit overblik";
         $scope.application.showOverview = true ;
+        setTimeout(function() {$scope.$digest()}, 10);
     }
 
     var setAssesment = function(name) {
         database.getVisit(name).then(function(visit) {
             $scope.application.header = "Funktionsvurdering | " + visit.citizen.name;
             $scope.application.showOverview = false;
+            setTimeout(function() {$scope.$digest()}, 10);
         });
     }
 

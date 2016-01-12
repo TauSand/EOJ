@@ -51,6 +51,9 @@ function getInitData() {
             _id: '1',
             type: 'citizen',
             name: 'Egon Jensen',
+            age: 81,
+            address: 'Abovej 34, 1 tv.',
+            image: '/content/johan.jpg',
             assignments: [
                 {
                     level3: 'Hjælp ud af sengen',
