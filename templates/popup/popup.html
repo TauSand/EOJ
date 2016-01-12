@@ -1,0 +1,19 @@
+<div class="Popup {{open}} {{open ? 'show' : 'hide'}}">
+    <div class="Background-shader">
+        <div class="Inner-popup">
+            <div class="card">
+                <div ng-transclude class="Popup-content"></div>
+                <div class="Popup-bottom">
+                    <div class="buttons">
+                        <div class="button accept">Gem
+                            <ripple on-click="onSave"></ripple>
+                        </div>
+                        <div class="button cancel">Annuller
+                            <ripple on-click="onCancel"></ripple>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

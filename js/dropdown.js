@@ -31,12 +31,11 @@ dropdown.directive('dropdownitem', function () {
     return {
         restrict: 'E',
         scope: {
-            'onClick': '@'
+            'onClick': '='
         },
         transclude: true,
         templateUrl: '/eoj/templates/dropdown/dropdownitem.html',
         link: function (scope, elem, attrs) {
-
         }
     }
 });

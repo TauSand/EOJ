@@ -3,8 +3,29 @@ var plan = angular.module('plan', ['databaseservice', 'router']);
 plan.controller('planController', function($scope, database, router) {
     var handleVisit =
         function (visit) {
-            $scope.assignments = _.map(visit.assignments, function(assignmentId) {
-                return visit.citizen.assignments[assignmentId];
+            $scope.assignments = _.map(visit.assignments, function(assignmentId, index) {
+                var assignment = visit.citizen.assignments[assignmentId];
+                assignment.titlePopup = false;
+                assignment.newHandle = "";
+                assignment.addHandle = function() {
+                    assignment.titlePopup = true;
+                    setTimeout(function() {router.scope.$digest()},10);
+                }
+                assignment.closePopup = function() {
+                    assignment.titlePopup = false;
+                    setTimeout(function() {router.scope.$digest()},10);
+                }
+                assignment.savePopup = function() {
+                    assignment.titlePopup = false;
+                    visit.citizen.assignments[index].comments.push({
+                       text: assignment.newHandle
+                    });
+                    database.getDatabase().put(visit.citizen).then(function() {
+                        assignment.newHandle = "";
+                    });
+                    setTimeout(function() {router.scope.$digest()},10);
+                }
+                return assignment;
             });
             setTimeout(function () {
                 $scope.$digest();

@@ -59,19 +59,19 @@ function getInitData() {
                     level3: 'Hjælp ud af sengen',
                     level2: 'mobilitet',
                     level1: ['Ændre kropsstilling'],
-                    comment: 'Hjælp til selvhjælp.'
+                    comments: [{text: 'Hjælp til selvhjælp.'}]
                 },
                 {
                     level3: 'Rehabilitering tandbørstning',
                     level2: 'Personlig hygiejne',
                     level1: ['Vaske sig', 'Kropspleje'],
-                    comment: 'Tilbyd evt. at børste hvis smerter er for store.'
+                    comments: [{text: 'Tilbyd evt. at børste hvis smerter er for store.'}]
                 },
                 {
                     level3: 'Anrette morgenmad',
                     level2: 'Tilberede/anrette mad',
                     level1: ['Lave mad'],
-                    comment: 'Foretrækker rundstykke skåret op, anrettet med lidt smør, en skive ost og en kop kaffe.'
+                    comments: [{text: 'Foretrækker rundstykke skåret op, anrettet med lidt smør, en skive ost og en kop kaffe.'}]
                 }
             ],
             assesment: [

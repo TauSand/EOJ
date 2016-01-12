@@ -1,0 +1,59 @@
+.Popup {
+  &.show {
+    display: block;
+  }
+  &.hide {
+    display: none;
+  }
+  .Background-shader {
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999999999;
+  }
+  .Inner-popup {
+    margin: 25px auto;
+    max-width: 1025px;
+    .card {
+      position: relative;
+      width: 100%;
+      min-height: 300px;
+      background-color: white;
+      margin-left: 30px;
+      margin-right: 30px;
+      margin: 25px auto;
+      .Popup-content {
+        padding-bottom: 50px;
+      }
+    }
+  }
+
+  .Popup-bottom {
+    position: absolute;
+    right: 15px;
+    left: 15px;
+    bottom: 15px;
+    padding-top: 20px;
+
+    .buttons {
+      float: right;
+
+      .button {
+        position: relative;
+        display: inline-block;
+        padding: 5px 15px;
+        font-weight: 400;
+        text-transform: capitalize;
+        &.accept {
+          color: green;
+        }
+        &.cancel {
+          color: darkred;;
+        }
+      }
+    }
+  }
+}

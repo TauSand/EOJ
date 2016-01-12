@@ -3,11 +3,17 @@
     <div ng-repeat="assignment in assignments">
         <div class="duty-entry {{assignment.done ? 'done' : ''}}">
             <div class="duty-title">{{assignment.level3}}</div>
-            <div class="duty-comment">{{assignment.comment}}</div>
+            <div ng-repeat="comment in assignment.comments" class="duty-comment">{{comment.text}}</div>
             <dropdown class="dropdown">
-                <dropdownitem>Ny observering</dropdownitem>
-                <dropdownitem>Ny handlevejledning</dropdownitem>
+                <dropdownitem>Ny Observation</dropdownitem>
+                <dropdownitem on-click="assignment.addHandle">Ny handlevejledning</dropdownitem>
             </dropdown>
+            <popup open="assignment.titlePopup" on-cancel="assignment.closePopup" on-save="assignment.savePopup">
+                <div class="Popup-header">
+                    <h3>Ny handlevejledning</h3>
+                </div>
+                <div class="textarea-wrapper"><textarea ng-model="assignment.newHandle"></textarea></div>
+            </popup>
         </div>
     </div>
 </div>
