@@ -20,6 +20,7 @@
     <script type="application/javascript" src="js/tabs.js"></script>
     <script type="application/javascript" src="js/plan.js"></script>
     <script type="application/javascript" src="js/assignment.js"></script>
+    <script type="application/javascript" src="js/personal.js"></script>
     <script type="application/javascript" src="js/assesment.js"></script>
     <script type="application/javascript" src="js/router.js"></script>
     <script type="application/javascript" src="jslib/less.js"></script>
@@ -58,8 +59,13 @@
         <tab match="visit">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-6" ng-controller="assignmentController">
-                        <assignment></assignment>
+                    <div class="col-xs-6">
+                        <div ng-controller="personalController">
+                            <personal></personal>
+                        </div>
+                        <div ng-controller="assignmentController">
+                            <assignment></assignment>
+                        </div>
                     </div>
                     <div class="col-xs-6" ng-controller="planController">
                         <plan></plan>

@@ -60,6 +60,7 @@
         }
 
     });
+    window.router = new Router();
+    router.value('router', window.router);
 
-    router.value('router', new Router());
 })();
