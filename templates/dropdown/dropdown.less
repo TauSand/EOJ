@@ -1,0 +1,36 @@
+.Dropdown {
+  display: inline-block;
+  position: relative;
+  .fa-ellipsis-v {
+    padding: 10px;
+  }
+  .Dropdown-menu {
+    z-index: 9999;
+    overflow: hidden;
+    border: 1px solid #c3c3c3;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    &.status-open {
+      height: auto;
+      width: auto;
+      min-width: 150px;
+    }
+    &.status-close {
+      height: 0;
+      min-width: 0;
+      width: 0;
+      border: 0;
+    }
+
+    .Dropdown-item {
+      font-size: 0.9em;
+      font-weight: 500;
+      padding: 10px 25px;
+      white-space: nowrap;
+      position: relative;
+    }
+  }
+}

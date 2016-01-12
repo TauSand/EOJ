@@ -15,11 +15,13 @@
                     icon: '@',
                     notifications: '@',
                     link: '=',
-                    match: '@'
+                    match: '@',
+                    show: "="
                 },
                 restrict: 'E',
                 templateUrl: 'templates/tabs/barbutton.html',
                 link: function (scope) {
+                    scope.show = scope.show ? scope.show : true;
                     scope.selected = false;
                     router.addToRoute.all(function () {
                         scope.selected = false;

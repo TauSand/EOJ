@@ -16,9 +16,11 @@
     <script type="application/javascript" src="js/databaseservice.js"></script>
     <script type="application/javascript" src="js/controllers.js"></script>
     <script type="application/javascript" src="js/careplan.js"></script>
+    <script type="application/javascript" src="js/dropdown.js"></script>
     <script type="application/javascript" src="js/header.js"></script>
     <script type="application/javascript" src="js/tabs.js"></script>
     <script type="application/javascript" src="js/plan.js"></script>
+    <script type="application/javascript" src="js/ripple.js"></script>
     <script type="application/javascript" src="js/assignment.js"></script>
     <script type="application/javascript" src="js/personal.js"></script>
     <script type="application/javascript" src="js/assesment.js"></script>
@@ -37,9 +39,9 @@
 
     <notificationbar>
         <barbutton link="'overblik'" match="overview" icon="fa fa-home"></barbutton>
-        <barbutton ng-if="!application.showOverview" link="application.visit" match="visit"
+        <barbutton show="!application.showOverview" link="application.visit" match="visit"
                    icon="fa fa-car"></barbutton>
-        <barbutton ng-if="!application.showOverview" link="application.citizenAssesment" match="assesment"
+        <barbutton show="!application.showOverview" link="application.citizenAssesment" match="assesment"
                    icon="fa fa-star"></barbutton>
     </notificationbar>
 
