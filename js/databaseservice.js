@@ -55,24 +55,28 @@ function getInitData() {
             address: 'Abovej 34, 1 tv.',
             image: '/content/johan.jpg',
             generelinfo: 'Egon har 85% nedsat syn, samt 50% nedsat hørelse',
+            plan: [],
             assignments: [
                 {
                     level3: 'Hjælp ud af sengen',
                     level2: 'mobilitet',
                     level1: ['Ændre kropsstilling'],
-                    comments: [{text: 'Hjælp til selvhjælp.'}]
+                    comments: [{text: 'Hjælp til selvhjælp.' +
+                    'Egon rejser sig selv op til siddende stilling.' +
+                    'Han hjælpes med at få sko og tøj på.' +
+                    'Han støttes i at komme op i stående stilling så han ikke mister balancen'}]
                 },
                 {
-                    level3: 'Rehabilitering tandbørstning',
+                    level3: 'Tandbørstning',
                     level2: 'Personlig hygiejne',
                     level1: ['Vaske sig', 'Kropspleje'],
-                    comments: [{text: 'Tilbyd evt. at børste hvis smerter er for store.'}]
+                    comments: [{text: 'Tilbyd at børste.'}]
                 },
                 {
                     level3: 'Anrette morgenmad',
                     level2: 'Tilberede/anrette mad',
                     level1: ['Lave mad'],
-                    comments: [{text: 'Foretrækker rundstykke skåret op, anrettet med lidt smør, en skive ost og en kop kaffe.'}]
+                    comments: [{text: 'Rundstykke skåret op, anrettet med lidt smør, en skive ost og en kop kaffe.'}]
                 }
             ],
             assesment: [
