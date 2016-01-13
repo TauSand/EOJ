@@ -105,7 +105,7 @@ function getInitData() {
                     level3: 'Anrette morgenmad',
                     level2: 'Tilberede/anrette mad',
                     level1: ['Lave mad'],
-                    comments: [{text: 'Rundstykke skåret op, anrettet med lidt smør, en skive ost og en kop kaffe.'}]
+                    comments: [{text: 'Rundstykke skåret op, anrettet med lidt smør, en skive ost og en kop kaffe.', link:["Ernæring"] }]
                 }
             ],
             assesment: [
@@ -198,7 +198,8 @@ function getInitData() {
                             comments: [
                                 "Egon har fortsat forhøjet kolesteroltal. Morgenmad laves om til havregrød.",
                                 "Ny kostplan er på vej fra diætist."
-                            ]
+                            ],
+                            isNew: true
                         },
                         "Undervægt": {precision: "", comments: []}
                     }
