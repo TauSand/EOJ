@@ -56,6 +56,7 @@
             overview: generic("overblik"),
             visit: generic("besoeg/:id"),
             assesment: generic("besoeg/:id/vurdering"),
+            sul: generic("besoeg/:id/sul"),
             all: generic("all")
         }
 

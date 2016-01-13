@@ -109,7 +109,7 @@ Sul = [
             {"Problem vedr. lugtesans": {precision: "", comments: []}},
             {"Problem vedr. følesans": {precision: "", comments: []}},
             {"Problem vedr. syn": {precision: "15% syn", comments: []}},
-            {"Problem vedr. hørelse": {precision: "50% nedsettelse.", comments: []}},
+            {"Problem vedr. hørelse": {precision: "50% nedsættelse.", comments: []}},
             {"Problem vedr. smagssans": {precision: "", comments: []}}
         ]
     },

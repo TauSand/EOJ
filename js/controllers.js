@@ -24,9 +24,18 @@ main.controller("mainController", function($scope, database, router) {
         });
     }
 
+    var setSul = function(name) {
+        database.getVisit(name).then(function(visit) {
+            $scope.application.header = "Sundhedstilstand | " + visit.citizen.name;
+            $scope.application.showOverview = false;
+            setTimeout(function() {$scope.$digest()}, 10);
+        });
+    }
+
     router.addToRoute.overview(setOverblik);
     router.addToRoute.visit(setCitizenName);
     router.addToRoute.assesment(setAssesment);
+    router.addToRoute.sul(setSul)
 
 
     $scope.application = {
@@ -44,6 +53,11 @@ main.controller("mainController", function($scope, database, router) {
             var pattern = /besoeg\/(\d+)/;
             var visit = pattern.exec(window.location.pathname)[1];
             return "besoeg/" + visit
+        },
+        sul: function() {
+            var pattern = /besoeg\/(\d+)/;
+            var visit = pattern.exec(window.location.pathname)[1];
+            return "besoeg/" + visit + "/sul"
         },
     };
 

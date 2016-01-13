@@ -1,0 +1,21 @@
+<div class="Sul container-fluid">
+    <div class="important-assesments row card">
+        <div class="col-xs-12">
+            <h3>Sundhedstilstand</h3>
+            <div class="row tableheader">
+                <div class="col-xs-2 category">Kategori</div>
+                <div class="col-xs-4 name">Term</div>
+                <div class="col-xs-3 precision">Præcision</div>
+                <div class="col-xs-3 comments">Kommentar</div>
+            </div>
+            <div class="assesment" ng-repeat="state in sul">
+                <div class="row">
+                    <div class="col-xs-2 category">{{state.category}}</div>
+                    <div class="col-xs-4 name">{{state.term}}</div>
+                    <div class="col-xs-3 precision">{{state.precision}}</div>
+                    <div class="col-xs-3 comments"><div class="comment" ng-repeat="comment in state.comments">{{comment}}</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

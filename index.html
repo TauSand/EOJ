@@ -18,6 +18,7 @@
     <script type="application/javascript" src="js/controllers.js"></script>
     <script type="application/javascript" src="js/careplan.js"></script>
     <script type="application/javascript" src="js/dropdown.js"></script>
+    <script type="application/javascript" src="js/sul.js"></script>
     <script type="application/javascript" src="js/header.js"></script>
     <script type="application/javascript" src="js/selectlinkpopup.js"></script>
     <script type="application/javascript" src="js/tabs.js"></script>
@@ -45,6 +46,8 @@
                    icon="fa fa-car"></barbutton>
         <barbutton show="!application.showOverview" link="application.citizenAssesment" match="assesment"
                    icon="fa fa-star"></barbutton>
+        <barbutton show="!application.showOverview" link="application.sul" match="sul"
+                   icon="fa fa-circle"></barbutton>
     </notificationbar>
 
     <tabscontainer>
@@ -80,6 +83,11 @@
         <tab match="assesment">
             <div ng-controller="assesmentController">
                 <assesment></assesment>
+            </div>
+        </tab>
+        <tab match="sul">
+            <div ng-controller="sulController">
+                <sul></sul>
             </div>
         </tab>
     </tabscontainer>
