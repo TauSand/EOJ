@@ -109,7 +109,7 @@ function getInitData() {
                     level3: 'Anrette morgenmad',
                     level2: 'Tilberede/anrette mad',
                     level1: ['Lave mad'],
-                    comments: [{text: 'Rundstykke skåret op, anrettet med lidt smør, en skive ost og en kop kaffe.', link:["Ernæring"] }]
+                    comments: [{text: 'Rundstykke skåret op, anrettet med lidt smør, en skive ost og en kop kaffe.', link:["Overvægt"] }]
                 }
             ],
             assesment: [

@@ -1,5 +1,6 @@
 <div class="Plan card">
     <h4>Heldags plan</h4>
+
     <div class="generel-info">
         <h6>Generel information</h6>
         {{generel}}
@@ -7,18 +8,45 @@
     <div ng-repeat="assignment in assignments">
         <div class="duty-entry {{assignment.hasChanges ? 'hasChanges' : ''}} {{assignment.done ? 'done' : ''}}">
             <h6>{{assignment.level3}}</h6>
+
             <div ng-repeat="comment in assignment.comments" class="duty-comment">{{comment.text}}</div>
-            <div ng-if="assignment.changedLinks" class="changedLinks"><i class="fa fa-exclamation-triangle"></i> Ændring i {{assignment.changedLinks}}</div>
+            <div ng-if="assignment.changedLinks" class="changedLinks"><i class="fa fa-exclamation-triangle"></i> Ændring
+                i {{assignment.changedLinks}}
+            </div>
             <dropdown class="dropdown">
-                <dropdownitem>Ny Observation</dropdownitem>
+                <dropdownitem on-click="assignment.newObservationOpen">Ny Observation</dropdownitem>
                 <dropdownitem on-click="assignment.addHandle">Ny handlevejledning</dropdownitem>
             </dropdown>
-                <popup open="assignment.titlePopup" on-cancel="assignment.closePopup" on-save="assignment.savePopup">
+            <popup open="assignment.newObservation" on-cancel="assignment.closeObservationPopup" on-save="assignment.saveObservation">
+                <div class="Popup-header">
+                    <h3>Ny observation</h3>
+                </div>
+                <div class="references">
+                    <h4>Hvilket område tilhører denne observation?</h4>
+                    <div class="button add-reference">Vælg område
+                        <ripple on-click="assignment.openSelectLinkPopupFuncObservation"></ripple>
+                    </div>
+                    <div class="reference" ng-if="assignment.observationLink">
+                        {{assignment.observationLink}}
+                    </div>
+
+                    <div ng-if="!assignment.observationLink" class="reference">
+                        <div class="hint"><i class="fa fa-hand-pointer-o"></i> Du skal vælge et område
+                        </div>
+                    </div>
+                    <p><span class="soft">Denne observation er oprettet på baggrund af:</span> {{assignment.level3}}</p>
+                </div>
+                <selectlinkpopup present-sel="assignment.sulObservation" open="assignment.openSelectLinkPopupObservation"></selectlinkpopup>
+                <div class="textarea-wrapper"><textarea ng-model="assignment.newObservationText"></textarea></div>
+                <div class="info">Denne opdatering bliver gjort tilgængelig for både andre faggrupper og borger</div>
+            </popup>
+            <popup open="assignment.titlePopup" on-cancel="assignment.closePopup" on-save="assignment.savePopup">
                 <div class="Popup-header">
                     <h3>Ny handlevejledning</h3>
                 </div>
                 <div class="references">
                     <h4><span class="soft">Handlevejldning for</span> {{assignment.level3}}</h4>
+
                     <div class="button add-reference">Tilknyt tilstand
                         <ripple on-click="assignment.openSelectLinkPopupFunc"></ripple>
                     </div>
@@ -27,11 +55,13 @@
                     </div>
 
                     <div ng-if="!assignment.link" class="reference">
-                        <div class="hint"><i class="fa fa-hand-pointer-o"></i> Du kan tilknytte en relevant tilstand.</div>
+                        <div class="hint"><i class="fa fa-hand-pointer-o"></i> Du kan tilknytte en relevant tilstand.
+                        </div>
                     </div>
                 </div>
-                <selectlinkpopup present-sel="assignment.sels" open="assignment.openSelectLinkPopup"></selectlinkpopup>
+                <selectlinkpopup present-sel="assignment.suls" open="assignment.openSelectLinkPopup"></selectlinkpopup>
                 <div class="textarea-wrapper"><textarea ng-model="assignment.newHandle"></textarea></div>
+                <div class="info">Denne opdatering bliver gjort tilgængelig for både andre faggrupper og borger</div>
             </popup>
         </div>
     </div>
