@@ -59,24 +59,28 @@ function getInitData() {
                 {
                     "Profession": "Sosu-hjælper",
                     "Worker": "Robert",
+                    "Image" : '/content/Robert.jpg' ,
                     "Start": "8:00",
                     "End": "9:00"
                 },
                 {
                     "Profession": "Sygeplejerske",
                     "Worker": "Marie",
+                    "Image" : '/content/sygeplejerske.jpg' ,
                     "Start": "10:00",
                     "End": "10:15"
                 },
                 {
                     "Profession": "Sosu-hjælper",
                     "Worker": "Ditte",
+                    "Image" : '/content/ditte.jpg' ,
                     "Start": "12:00",
                     "End": "12:30"
                 },
                 {
                     "Profession": "Sosu-hjælper",
                     "Worker": "Ulla",
+                    "Image" : '/content/ulla.jpg' ,
                     "Start": "22:00",
                     "End": "22:30"
                 },
