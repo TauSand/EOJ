@@ -18,16 +18,16 @@
                     <h3>Ny handlevejledning</h3>
                 </div>
                 <div class="references">
-                    <h4>Nuværende reference</h4>
-                    <div class="button add-reference">Vælg reference
+                    <h4><span class="soft">Handlevejldning for</span> {{assignment.level3}}</h4>
+                    <div class="button add-reference">Tilknyt tilstand
                         <ripple on-click="assignment.openSelectLinkPopupFunc"></ripple>
                     </div>
-                    <div class="reference" ng-if="assignment.link" ng-repeat="level in assignment.link">
-                        {{level}}
+                    <div class="reference" ng-if="assignment.link">
+                        {{assignment.link}}
                     </div>
 
                     <div ng-if="!assignment.link" class="reference">
-                        Du skal vælge en reference.
+                        <div class="hint"><i class="fa fa-hand-pointer-o"></i> Du kan tilknytte en relevant tilstand.</div>
                     </div>
                 </div>
                 <selectlinkpopup present-sel="assignment.sels" open="assignment.openSelectLinkPopup"></selectlinkpopup>

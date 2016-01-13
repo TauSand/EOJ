@@ -14,7 +14,7 @@ plan.controller('planController', function($scope, database, router) {
                     if(comment.link) {
                         comment.link = _.map(comment.link, function(link) {
                             var result = find(visit, link);
-                            if(result.isNew) {
+                            if(result && result.isNew) {
                                 assignment.changedLinks = link;
                             }
                             return result;
@@ -47,28 +47,32 @@ plan.controller('planController', function($scope, database, router) {
                     assignment.openSelectLinkPopup = true;
                     setTimeout(function() {$scope.$digest()},10);
                 }
-                assignment.sels = [];
-                _.each(visit.assignments, function (assignmentIndex) {
-                    var assignmentInner = visit.citizen.assignments[assignmentIndex];
-                    _.each(visit.citizen.assesment, function (group) {
-                        var category = group.title;
-                        for (var i in group.assesments) {
-                            if (_.contains(assignmentInner.level1, i)) {
-                                assignment.sels.push({
-                                    category: category,
-                                    name: i,
-                                    score: group.assesments[i],
-                                    assignment: assignmentInner,
-                                    select: function() {
-                                        assignment.link = assignmentInner.level1
-                                        assignment.openSelectLinkPopup = false;
-                                        setTimeout(function() {$scope.$digest()},10);
-                                    }
-                                });
-                            }
+                var sul = _.map(visit.citizen.sul, function(category) {
+                    var result = [];
+                    for(var i in category.states) {
+                        if(category.states[i].precision) {
+                            var res = i;
+                            result.push({
+                                category: category.title,
+                                term: res,
+                                precision: category.states[i].precision,
+                                comments: category.states[i].comments,
+                                isNew: category.states[i].isNew,
+                                select: function() {
+                                    console.log(res);
+                                    assignment.link = res
+                                    assignment.openSelectLinkPopup = false;
+                                    setTimeout(function () {
+                                        $scope.$digest()
+                                    }, 10);
+                                }
+                            });
                         }
-                    });
+                    }
+                    return result;
                 });
+                assignment.sels = [].concat.apply([], sul);
+
                 return assignment;
             });
             setTimeout(function () {
