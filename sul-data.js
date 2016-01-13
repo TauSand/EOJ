@@ -6,15 +6,15 @@ Sul = [
     {
         title: "Funktionsniveau",
         states: [
-            {"Problem relateret til personlig pleje": {precision: "", comments: []}},
-            {"Problem relateret til daglige aktiviteter": {precision: "", comments: []}},
+            {"Problem relateret til personlig pleje": {precision: "Skal hjælpes i det daglig hygiejne", comments: []}},
+            {"Problem relateret til daglige aktiviteter": {precision: "Har brug for hjælp", comments: []}},
         ]
     },
 
     {
         title: "Bevægeapparat",
         states: [
-            {"Problem vedr. mobilitet og bevægelse": {precision: "", comments: []}}
+            {"Problem vedr. mobilitet og bevægelse": {precision: "Balanceproblemer", comments: []}}
         ]
     },
 
@@ -24,7 +24,15 @@ Sul = [
             {"Problem vedr. væskeindtag": {precision: "", comments: []}},
             {"Problem vedr. fødeindtag": {precision: "", comments: []}},
             {"Vægtændring": {precision: "", comments: []}},
-            {"Overvægt": {precision: "", comments: []}},
+            {
+                "Overvægt": {
+                    precision: "Vægten skal kontrolleres da borger har for højt blodtryk, kolesterol og blodglukose.",
+                    comments: [
+                        "Egon har fortsat forhøjet kolesteroltal. Morgenmad laves om til havregråd.",
+                        "Ny kostplanen er på vej fra dietist."
+                    ]
+                }
+            },
             {"Undervægt": {precision: "", comments: []}}
         ]
     },
@@ -70,7 +78,7 @@ Sul = [
             {"Respirationsproblem": {precision: "", comments: []}}
         ]
     },
-    
+
     {
         title: "Cirkulation",
         states: [
@@ -89,7 +97,8 @@ Sul = [
         title: "Smerte",
         states: [
             {"Akutte smerter": {precision: "", comments: []}},
-            {"Periodevise smerter": {precision: "", comments: []}},
+            {"Periodevise smerter": {precision: "Borger har periodevise smerter ved højre skulder og højre side af bækken som følge af fald.",
+                comments: ["Smertebehandling er igangsæt. Til revurdering om 5 dage "]}},
             {"Kroniske smerter": {precision: "", comments: []}}
         ]
     },
@@ -99,8 +108,8 @@ Sul = [
         states: [
             {"Problem vedr. lugtesans": {precision: "", comments: []}},
             {"Problem vedr. følesans": {precision: "", comments: []}},
-            {"Problem vedr. syn": {precision: "", comments: []}},
-            {"Problem vedr. hørelse": {precision: "", comments: []}},
+            {"Problem vedr. syn": {precision: "15% syn", comments: []}},
+            {"Problem vedr. hørelse": {precision: "50% nedsettelse.", comments: []}},
             {"Problem vedr. smagssans": {precision: "", comments: []}}
         ]
     },
