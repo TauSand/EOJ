@@ -1,0 +1,19 @@
+<popup open="open" on-cancel="onCancel">
+    <div class="Selectlinkpopup">
+        <div class="Popup-header">
+            <h3>Vælg reference</h3>
+        </div>
+        <div class="content">
+            <h4>Nuværende opgaver</h4>
+            <div class="sel-assignment" ng-repeat="sel in presentSel">
+                <div class="assignemnt">{{sel.assignment.level3}}</div>
+                <div class="levels">
+                    <div class="level1" ng-repeat="level in sel.assignment.level1">
+                        {{level}}
+                    </div>
+                </div>
+                <ripple on-click="sel.select"></ripple>
+            </div>
+        </div>
+    </div>
+</popup>

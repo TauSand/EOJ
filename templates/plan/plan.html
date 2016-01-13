@@ -8,10 +8,24 @@
                 <dropdownitem>Ny Observation</dropdownitem>
                 <dropdownitem on-click="assignment.addHandle">Ny handlevejledning</dropdownitem>
             </dropdown>
-            <popup open="assignment.titlePopup" on-cancel="assignment.closePopup" on-save="assignment.savePopup">
+                <popup open="assignment.titlePopup" on-cancel="assignment.closePopup" on-save="assignment.savePopup">
                 <div class="Popup-header">
                     <h3>Ny handlevejledning</h3>
                 </div>
+                <div class="references">
+                    <h4>Nuværende reference</h4>
+                    <div class="button add-reference">Vælg reference
+                        <ripple on-click="assignment.openSelectLinkPopupFunc"></ripple>
+                    </div>
+                    <div class="reference" ng-if="assignment.link" ng-repeat="level in assignment.link">
+                        {{level}}
+                    </div>
+
+                    <div ng-if="!assignment.link" class="reference">
+                        Du skal vælge en reference.
+                    </div>
+                </div>
+                <selectlinkpopup present-sel="assignment.sels" open="assignment.openSelectLinkPopup"></selectlinkpopup>
                 <div class="textarea-wrapper"><textarea ng-model="assignment.newHandle"></textarea></div>
             </popup>
         </div>

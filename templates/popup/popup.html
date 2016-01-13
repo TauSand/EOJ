@@ -5,7 +5,7 @@
                 <div ng-transclude class="Popup-content"></div>
                 <div class="Popup-bottom">
                     <div class="buttons">
-                        <div class="button accept">Gem
+                        <div ng-if="onSave" class="button accept">Gem
                             <ripple on-click="onSave"></ripple>
                         </div>
                         <div class="button cancel">Annuller
