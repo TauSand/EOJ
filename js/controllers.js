@@ -73,6 +73,11 @@ main.controller("mainController", function($scope, database, router) {
             var visit = pattern.exec(window.location.pathname)[1];
             return "besoeg/" + visit + "/vurdering"
         },
+        citizenplan: function() {
+            var pattern = /besoeg\/(\d+)/;
+            var visit = pattern.exec(window.location.pathname)[1];
+            return "besoeg/" + visit + "/borgerplan"
+        },
         visit: function() {
             var pattern = /besoeg\/(\d+)/;
             var visit = pattern.exec(window.location.pathname)[1];

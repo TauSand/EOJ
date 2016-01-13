@@ -57,6 +57,7 @@
             visit: generic("besoeg/:id"),
             assesment: generic("besoeg/:id/vurdering"),
             sul: generic("besoeg/:id/sul"),
+            citizenplan: generic("besoeg/:id/borgerplan"),
             all: generic("all")
         }
 

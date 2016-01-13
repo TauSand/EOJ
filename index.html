@@ -20,6 +20,7 @@
     <script type="application/javascript" src="js/dropdown.js"></script>
     <script type="application/javascript" src="js/sul.js"></script>
     <script type="application/javascript" src="js/header.js"></script>
+    <script type="application/javascript" src="js/citizenplan.js"></script>
     <script type="application/javascript" src="js/selectlinkpopup.js"></script>
     <script type="application/javascript" src="js/tabs.js"></script>
     <script type="application/javascript" src="js/plan.js"></script>
@@ -48,6 +49,8 @@
                    icon="fa fa-star"></barbutton>
         <barbutton show="!application.showOverview" notifications="sulNotifications" link="application.sul" match="sul"
                    icon="fa fa-circle"></barbutton>
+        <barbutton show="!application.showOverview" link="application.citizenplan" match="citizenplan"
+                   icon="fa fa-cab"></barbutton>
     </notificationbar>
 
     <tabscontainer>
@@ -88,6 +91,16 @@
         <tab match="sul">
             <div ng-controller="sulController">
                 <sul></sul>
+            </div>
+        </tab>
+        <tab match="sul">
+            <div ng-controller="sulController">
+                <sul></sul>
+            </div>
+        </tab>
+        <tab match="citizenplan">
+            <div ng-controller="citizenplanController">
+                <citizenplan></citizenplan>
             </div>
         </tab>
     </tabscontainer>
