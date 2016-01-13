@@ -60,7 +60,7 @@ function getInitData() {
                     level3: 'Hjælp ud af sengen',
                     level2: 'mobilitet',
                     level1: ['Ændre kropsstilling'],
-                    comments: [{text: 'Hjælp til selvhjælp.'}]
+                    comments: [{text: 'Hjælp til selvhjælp.', link: ['Periodevise smerter']}]
                 },
                 {
                     level3: 'Rehabilitering tandbørstning',
@@ -163,8 +163,8 @@ function getInitData() {
                         "Overvægt": {
                             precision: "Vægten skal kontrolleres da borger har for højt blodtryk, kolesterol og blodglukose.",
                             comments: [
-                                "Egon har fortsat forhøjet kolesteroltal. Morgenmad laves om til havregråd.",
-                                "Ny kostplanen er på vej fra dietist."
+                                "Egon har fortsat forhøjet kolesteroltal. Morgenmad laves om til havregrød.",
+                                "Ny kostplan er på vej fra diætist."
                             ]
                         },
                         "Undervægt": {precision: "", comments: []}
@@ -223,8 +223,9 @@ function getInitData() {
                         "Akutte smerter": {precision: "", comments: []},
 
                         "Periodevise smerter": {
-                            precision: "Borger har periodevise smerter ved højre skulder og højre side af bækken som følge af fald.",
-                            comments: ["Smertebehandling er igangsæt. Til revurdering om 5 dage "]
+                            precision: "Borger har periodevise meget kraftige smerter ved højre skulder og højre side af bækken som følge af fald.",
+                            comments: ["Smertebehandling er igangsæt. Til revurdering om 5 dage "],
+                            isNew: true
                         },
                         "Kroniske smerter": {precision: "", comments: []}
                     }

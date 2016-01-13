@@ -5,9 +5,10 @@
         {{generel}}
     </div>
     <div ng-repeat="assignment in assignments">
-        <div class="duty-entry {{assignment.done ? 'done' : ''}}">
+        <div class="duty-entry {{assignment.hasChanges ? 'hasChanges' : ''}} {{assignment.done ? 'done' : ''}}">
             <h6>{{assignment.level3}}</h6>
             <div ng-repeat="comment in assignment.comments" class="duty-comment">{{comment.text}}</div>
+            <div ng-if="assignment.changedLinks" class="changedLinks"><i class="fa fa-exclamation-triangle"></i> Ændring i {{assignment.changedLinks}}</div>
             <dropdown class="dropdown">
                 <dropdownitem>Ny Observation</dropdownitem>
                 <dropdownitem on-click="assignment.addHandle">Ny handlevejledning</dropdownitem>

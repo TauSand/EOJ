@@ -8,7 +8,7 @@
                 <div class="col-xs-3 precision">Præcision</div>
                 <div class="col-xs-3 comments">Kommentar</div>
             </div>
-            <div class="assesment" ng-repeat="state in sul">
+            <div class="assesment {{state.isNew ? 'new' : ''}}" ng-repeat="state in sul">
                 <div class="row">
                     <div class="col-xs-2 category">{{state.category}}</div>
                     <div class="col-xs-4 name">{{state.term}}</div>

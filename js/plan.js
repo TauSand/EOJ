@@ -10,6 +10,18 @@ plan.controller('planController', function($scope, database, router) {
                 assignment.newHandle = "";
                 assignment.link = undefined;
                 assignment.openSelectLinkPopup = false;
+                _.each(assignment.comments, function(comment) {
+                    if(comment.link) {
+                        comment.link = _.map(comment.link, function(link) {
+                            var result = find(visit, link);
+                            if(result.isNew) {
+                                assignment.changedLinks = link;
+                            }
+                            return result;
+                        });
+                    }
+                    assignment.hasChanges = find(assignment.comments, "isNew");
+                });
                 assignment.addHandle = function() {
                     assignment.titlePopup = true;
                     setTimeout(function() {router.scope.$digest()},10);
