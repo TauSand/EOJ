@@ -262,7 +262,7 @@ function getInitData() {
 
                         "Periodevise smerter": {
                             precision: "Borger har periodevise meget kraftige smerter ved højre skulder og højre side af bækken som følge af fald.",
-                            comments: ["Smertebehandling er igangsæt. Til revurdering om 5 dage "],
+                            comments: ["Smertebehandling er igangsat. Til revurdering om 5 dage "],
                             isNew: true
                         },
                         "Kroniske smerter": {precision: "", comments: []}
