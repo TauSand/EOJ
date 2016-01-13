@@ -1,7 +1,7 @@
 <div class="barbutton {{show ? 'show' : 'hide'}} {{selected ? 'selected' : ''}}">
     <i class="{{icon}}"></i>
     <div ng-if="notifications > 0" class="notification-container">
-        {{notifications}}
+        <div class="count">{{notifications}}</div>
     </div>
     <ripple on-click="onClick"></ripple>
 </div>

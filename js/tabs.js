@@ -13,7 +13,7 @@
             return {
                 scope: {
                     icon: '@',
-                    notifications: '@',
+                    notifications: '=',
                     link: '=',
                     match: '@',
                     show: "="

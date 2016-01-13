@@ -14,7 +14,8 @@ sul.controller('sulController', function ($scope, database, router) {
                                 category: category.title,
                                 term: i,
                                 precision: category.states[i].precision,
-                                comments: category.states[i].comments
+                                comments: category.states[i].comments,
+                                isNew: category.states[i].isNew
                             });
                         }
                     }

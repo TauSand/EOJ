@@ -64,7 +64,7 @@ function getInitData() {
                     comments: [{text: 'Hjælp til selvhjælp.' +
                     'Egon rejser sig selv op til siddende stilling.' +
                     'Han hjælpes med at få sko og tøj på.' +
-                    'Han støttes i at komme op i stående stilling så han ikke mister balancen'}]
+                    'Han støttes i at komme op i stående stilling så han ikke mister balancen', link: ['Periodevise smerter']}]
                 },
                 {
                     level3: 'Tandbørstning',
@@ -167,8 +167,8 @@ function getInitData() {
                         "Overvægt": {
                             precision: "Vægten skal kontrolleres da borger har for højt blodtryk, kolesterol og blodglukose.",
                             comments: [
-                                "Egon har fortsat forhøjet kolesteroltal. Morgenmad laves om til havregråd.",
-                                "Ny kostplanen er på vej fra dietist."
+                                "Egon har fortsat forhøjet kolesteroltal. Morgenmad laves om til havregrød.",
+                                "Ny kostplan er på vej fra diætist."
                             ]
                         },
                         "Undervægt": {precision: "", comments: []}
@@ -227,8 +227,9 @@ function getInitData() {
                         "Akutte smerter": {precision: "", comments: []},
 
                         "Periodevise smerter": {
-                            precision: "Borger har periodevise smerter ved højre skulder og højre side af bækken som følge af fald.",
-                            comments: ["Smertebehandling er igangsæt. Til revurdering om 5 dage "]
+                            precision: "Borger har periodevise meget kraftige smerter ved højre skulder og højre side af bækken som følge af fald.",
+                            comments: ["Smertebehandling er igangsæt. Til revurdering om 5 dage "],
+                            isNew: true
                         },
                         "Kroniske smerter": {precision: "", comments: []}
                     }

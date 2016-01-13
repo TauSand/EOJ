@@ -11,3 +11,19 @@ $(window).keydown(function (e) {
 $(function() {
     new (Backbone.Router.extend({}))().navigate("/overblik", {trigger: true});
 });
+
+function find(object, value) {
+    if(typeof object == 'object') {
+        for(var i in object) {
+            if(i == value) {
+                return object[i];
+            }
+            else {
+                var result = find(object[i], value);
+                if(result) {
+                    return result;
+                }
+            }
+        }
+    }
+}
