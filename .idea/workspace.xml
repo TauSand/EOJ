@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cb9f460-85b3-4ce2-b2f2-32cb32139b25" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/databaseservice.js" afterPath="$PROJECT_DIR$/js/databaseservice.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/plan.js" afterPath="$PROJECT_DIR$/js/plan.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/sul.js" afterPath="$PROJECT_DIR$/js/sul.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tabs.js" afterPath="$PROJECT_DIR$/js/tabs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/plan/plan.html" afterPath="$PROJECT_DIR$/templates/plan/plan.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/plan/plan.less" afterPath="$PROJECT_DIR$/templates/plan/plan.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/sul/sul.html" afterPath="$PROJECT_DIR$/templates/sul/sul.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/sul/sul.less" afterPath="$PROJECT_DIR$/templates/sul/sul.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tabs/barbutton.html" afterPath="$PROJECT_DIR$/templates/tabs/barbutton.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tabs/tabs.less" afterPath="$PROJECT_DIR$/templates/tabs/tabs.less" />
     </list>
     <ignored path="EOJ.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,8 +72,8 @@
       <file leaf-file-name="databaseservice.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/databaseservice.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.348378">
-              <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.5352609">
+              <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -824,15 +812,15 @@
       <workItem from="1452678454161" duration="9489000" />
       <workItem from="1452689481370" duration="143000" />
       <workItem from="1452690737526" duration="2642000" />
-      <workItem from="1452703012267" duration="1116000" />
+      <workItem from="1452703012267" duration="1697000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173308000" />
+    <option name="totallyTimeSpent" value="173889000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="-13" width="2762" height="1770" extended-state="6" />
+    <frame x="-13" y="-13" width="2762" height="1770" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1263,8 +1251,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/databaseservice.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.348378">
-          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.5352609">
+          <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
           <folding />
         </state>
       </provider>

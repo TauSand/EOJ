@@ -55,16 +55,45 @@ function getInitData() {
             address: 'Abovej 34, 1 tv.',
             image: '/content/johan.jpg',
             generelinfo: 'Egon har 85% nedsat syn, samt 50% nedsat hørelse',
-            plan: [],
+            plan: [
+                {
+                    "Profession": "Sosu-hjælper",
+                    "Worker": "Robert",
+                    "Start": "8:00",
+                    "End": "9:00"
+                },
+                {
+                    "Profession": "Sygeplejerske",
+                    "Worker": "Marie",
+                    "Start": "10:00",
+                    "End": "10:15"
+                },
+                {
+                    "Profession": "Sosu-hjælper",
+                    "Worker": "Ditte",
+                    "Start": "12:00",
+                    "End": "12:30"
+                },
+                {
+                    "Profession": "Sosu-hjælper",
+                    "Worker": "Ulla",
+                    "Start": "22:00",
+                    "End": "22:30"
+                },
+
+            ],
             assignments: [
                 {
                     level3: 'Hjælp ud af sengen',
                     level2: 'mobilitet',
                     level1: ['Ændre kropsstilling'],
-                    comments: [{text: 'Hjælp til selvhjælp.' +
-                    'Egon rejser sig selv op til siddende stilling.' +
-                    'Han hjælpes med at få sko og tøj på.' +
-                    'Han støttes i at komme op i stående stilling så han ikke mister balancen', link: ['Periodevise smerter']}]
+                    comments: [{
+                        text: 'Hjælp til selvhjælp.' +
+                        'Egon rejser sig selv op til siddende stilling.' +
+                        'Han hjælpes med at få sko og tøj på.' +
+                        'Han støttes i at komme op i stående stilling så han ikke mister balancen',
+                        link: ['Periodevise smerter']
+                    }]
                 },
                 {
                     level3: 'Tandbørstning',
@@ -273,7 +302,8 @@ function getInitData() {
                     "Problem med væske fra dræn": {precision: "", comments: []}
                 }
             ]
-        },
+        }
+        ,
         {
             _id: '2',
             type: 'citizen',
