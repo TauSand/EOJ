@@ -35,8 +35,9 @@ ripple.directive('ripple', function () {
                     scope.onClick();
                 }, 150);
                 setTimeout(function() {
+                    $(this).html("");
                     $ripple.remove();
-                }, 400)
+                }.bind(this), 400)
             });
         }
     }
