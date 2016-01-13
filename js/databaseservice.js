@@ -58,15 +58,15 @@ function getInitData() {
             plan: [
                 {
                     "Profession": "Sosu-hjælper",
-                    "Worker": "Ditte",
-                    "Image": '/content/ditte.jpg',
+                    "Worker": "Robert",
+                    "Image": '/content/Robert.jpg',
                     "Start": "8:00",
-                    "End": "8:30"
+                    "End": "9:00"
                 },
                 {
                     "Profession": "Sygeplejerske",
-                    "Worker": "Robert",
-                    "Image": '/content/Robert.jpg',
+                    "Worker": "Marie",
+                    "Image": '/content/sygeplejerske.jpg',
                     "Start": "09:25",
                     "End": "10:15"
                 },
@@ -320,17 +320,17 @@ function getInitData() {
             plan: [
                 {
                     "Profession": "Sosu-hjælper",
-                    "Worker": "Robert",
-                    "Image": '/content/Robert.jpg',
-                    "Start": "8:00",
-                    "End": "9:00"
+                    "Worker": "Ditte",
+                    "Image": '/content/ditte.jpg',
+                    "Start": "7:30",
+                    "End": "8:00"
                 },
                 {
                     "Profession": "Sygeplejerske",
-                    "Worker": "Marie",
-                    "Image": '/content/sygeplejerske.jpg',
-                    "Start": "10:00",
-                    "End": "10:15"
+                    "Worker": "Robert",
+                    "Image": '/content/Robert.jpg',
+                    "Start": "9:25",
+                    "End": "10:00"
                 },
                 {
                     "Profession": "Sosu-hjælper",
