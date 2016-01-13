@@ -27,3 +27,8 @@ function find(object, value) {
         }
     }
 }
+
+function resetDB() {
+    var db = new PouchDB("database");
+    db.destroy();
+}
