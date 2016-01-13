@@ -1,11 +1,37 @@
 .Mymessages {
+  .no-select;
   h5 {
     padding: 15px;
+  }
+  h6 {
+    margin: 0;
+  }
+  .citizen {
+    margin-bottom: 10px;
   }
   .no-messages {
     padding: 50px 30px;
     background-color: #e8e8e8;
     border-top: 1px solid #d1d1d1;
+  }
+  .message {
+    .info {
+      border: 1px solid rgba(139, 0, 0,0.2);
+      background-color: rgba(139, 0, 0, 0.1);
+      padding: 3px;
+      border-radius: 3px;
+      font-size: 0.9em;
+      .state {
+        color: darkred;
+        font-weight: 500;
+      }
+    }
+    border-top: 1px solid #c3c3c3;
+    padding: 15px;
+  }
+
+  .message:nth-child(even) {
+    background: #F7F7F7;
   }
 }
 

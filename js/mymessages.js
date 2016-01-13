@@ -1,12 +1,27 @@
 var mymessages = angular.module('mymessages', ['databaseservice', 'router']);
 
 mymessages.controller('mymessagesController', function ($scope, database, router) {
-    var renderMessages = function(messages) {
-        //$scope.$apply(function() {
-            $scope.messages = [];
-        //});
+    var renderMessages = function(outbox) {
+        $scope.$apply(function() {
+            var promises = _.map(outbox.messages, function(message) {
+                return new Promise(function(fulfill, reject) {
+                    database.getDatabase().get(message.citizen).then(function(citizen) {
+                        fulfill({
+                            text: message.text,
+                            citizen: citizen.name
+                        })
+                    });
+                });
+            })
+            Promise.all(promises).then(function(messages) {
+                $scope.$apply(function() {
+                    $scope.messages = messages;
+                });
+            });
+        });
     }
-    renderMessages();
+    database.getDatabase().get("outbox").then(renderMessages);
+    database.addListener(function() {database.getDatabase().get("outbox").then(renderMessages)});
 });
 
 

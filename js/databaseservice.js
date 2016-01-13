@@ -592,6 +592,10 @@ function getInitData() {
             citizen: '2',
             start: '09:25',
             end: '10:00'
+        },
+        {
+            _id: 'outbox',
+            messages: [{text: "Hente toiletpapir", citizen: '1'}, {text: "skifte ble", citizen: '1'}]
         }
     ]
         ;

@@ -1,4 +1,11 @@
 <div class="Mymessages card">
     <h5>Mine sendte beskeder</h5>
     <div ng-if="!messages" class="no-messages"><i class="fa fa-hand-pointer-o"></i> Du har ingen sendte beskeder</div>
+    <div ng-if="messages" class="messages">
+        <div class="message" ng-repeat="message in messages">
+            <h6 class="text">{{message.text}}</h6>
+            <div class="citizen"><i class="fa fa-envelope"></i> {{message.citizen}}</div>
+            <div class="info">Denne opgave er: <span class="state"><i class="fa fa-times"></i> IKKE læst</span> og <span class="state"><i class="fa fa-times"></i>IKKE udført</i></span></div>
+        </div>
+    </div>
 </div>
