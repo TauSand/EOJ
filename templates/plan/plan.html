@@ -1,8 +1,12 @@
 <div class="Plan card">
     <h4>Heldags plan</h4>
+    <div class="generel-info">
+        <h6>Generel information</h6>
+        {{generel}}
+    </div>
     <div ng-repeat="assignment in assignments">
         <div class="duty-entry {{assignment.done ? 'done' : ''}}">
-            <div class="duty-title">{{assignment.level3}}</div>
+            <h6>{{assignment.level3}}</h6>
             <div ng-repeat="comment in assignment.comments" class="duty-comment">{{comment.text}}</div>
             <dropdown class="dropdown">
                 <dropdownitem>Ny Observation</dropdownitem>

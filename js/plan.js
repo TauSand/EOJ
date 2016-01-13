@@ -3,6 +3,7 @@ var plan = angular.module('plan', ['databaseservice', 'router']);
 plan.controller('planController', function($scope, database, router) {
     var handleVisit =
         function (visit) {
+            $scope.generel = visit.citizen.generelinfo;
             $scope.assignments = _.map(visit.assignments, function(assignmentId, index) {
                 var assignment = visit.citizen.assignments[assignmentId];
                 assignment.titlePopup = false;

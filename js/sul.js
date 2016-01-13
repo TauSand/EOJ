@@ -22,7 +22,6 @@ sul.controller('sulController', function ($scope, database, router) {
                 });
                 var sul = [].concat.apply([], sul);
                 $scope.sul = sul;
-                console.log(sul);
             });
 
         });

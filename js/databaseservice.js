@@ -54,6 +54,7 @@ function getInitData() {
             age: 81,
             address: 'Abovej 34, 1 tv.',
             image: '/content/johan.jpg',
+            generelinfo: 'Egon har 85% nedsat syn, samt 50% nedsat hørelse',
             assignments: [
                 {
                     level3: 'Hjælp ud af sengen',
