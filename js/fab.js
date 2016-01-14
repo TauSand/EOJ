@@ -5,12 +5,42 @@ fab.controller('fabController', function ($scope, database, router) {
     var visitId = pattern.exec(window.location.pathname)[1];
     database.getVisit(visitId).then(function (visit) {
         $scope.$apply(function () {
+            $scope.citizen = visit.citizen;
             $scope.open = false;
             $scope.openObservation = false;
+            $scope.openNewTask = false;
             $scope.values = {
                 observationText: "",
                 observationLink: undefined,
-                observationSelect: false
+                observationSelect: false,
+                taskText: ""
+            }
+
+            $scope.openNewTaskFunc = function() {
+                $scope.$apply(function() {
+                    $scope.openNewTask = true;
+                });
+            }
+
+            $scope.closeTask = function() {
+                $scope.$apply(function() {
+                    $scope.openNewTask = false;
+                });
+            }
+
+            $scope.saveTask = function() {
+                    database.getDatabase().get("outbox").then(function(outbox) {
+                        outbox.messages.push({
+                            citizen: visit.citizen._id,
+                            text: $scope.values.taskText
+                        });
+                        database.getDatabase().put(outbox).then(function() {
+                            $scope.$apply(function() {
+                                $scope.values.taskText = "";
+                                $scope.openNewTask = false;
+                            });
+                        });
+                    })
             }
 
             var sulObservation = _.map(visit.citizen.sul, function (category) {

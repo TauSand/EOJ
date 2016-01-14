@@ -1,12 +1,20 @@
 <div class="fab">
     <div ng-click="closeFab()" class="shader {{open ? 'shadervisible' : ''}}"></div>
     <div class="bullet {{open ? 'shadervisible' : ''}}">
-        <div class="text">Ny observering <ripple on-click="openObservationFunc"></ripple></div><div class="box"><i class="fa fa-sticky-note-o"></i></div>
+        <div class="text">Ny observation
+            <ripple on-click="openObservationFunc"></ripple>
+        </div>
+        <div class="box"><i class="fa fa-sticky-note-o"></i></div>
     </div>
     <div class="bullet {{open ? 'shadervisible' : ''}}">
-        <div class="text">Ny observering</div><div class="box"><i class="fa fa-sticky-note-o"></i></div>
+        <div class="text">Ny opgave
+            <ripple on-click="openNewTaskFunc"></ripple>
+        </div>
+        <div class="box"><i class="fa fa-envelope-o"></i></div>
     </div>
-    <div class="fab-button"><i class="fa fa-plus"></i><ripple on-click="openFab"></ripple></div>
+    <div class="fab-button"><i class="fa fa-plus"></i>
+        <ripple on-click="openFab"></ripple>
+    </div>
 
     <popup open="openObservation" on-cancel="closeObservation" on-save="saveObservation">
         <div class="Popup-header">
@@ -14,6 +22,7 @@
         </div>
         <div class="references">
             <h4>Hvilket område tilhører denne observation?</h4>
+
             <div class="button add-reference">Vælg område
                 <ripple on-click="openObservationSelect"></ripple>
             </div>
@@ -27,6 +36,16 @@
         </div>
         <selectlinkpopup conditional="tau" present-sel="suls" open="values.observationSelect"></selectlinkpopup>
         <div class="textarea-wrapper"><textarea ng-model="values.observationText"></textarea></div>
+        <div class="info">Denne opdatering bliver gjort tilgængelig for både andre faggrupper og borger</div>
+    </popup>
+    <popup open="openNewTask" on-cancel="closeTask" on-save="saveTask">
+        <div class="Popup-header">
+            <h3>Ny opgave</h3>
+        </div>
+        <div class="references">
+            <h4>Ny opgave vedr. {{citizen.name}}</h4>
+        </div>
+        <div class="textarea-wrapper"><textarea ng-model="values.taskText"></textarea></div>
         <div class="info">Denne opdatering bliver gjort tilgængelig for både andre faggrupper og borger</div>
     </popup>
 </div>
