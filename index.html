@@ -20,6 +20,7 @@
     <script type="application/javascript" src="js/mymessages.js"></script>
     <script type="application/javascript" src="js/dropdown.js"></script>
     <script type="application/javascript" src="js/sul.js"></script>
+    <script type="application/javascript" src="js/fab.js"></script>
     <script type="application/javascript" src="js/header.js"></script>
     <script type="application/javascript" src="js/citizenplan.js"></script>
     <script type="application/javascript" src="js/selectlinkpopup.js"></script>
@@ -108,7 +109,9 @@
     </tabscontainer>
 
 </div>
-
+<div ng-if="!application.showOverview" ng-controller="fabController">
+    <fab></fab>
+</div>
 </body>
 
 </html>

@@ -1,0 +1,131 @@
+.fab {
+  .shader {
+    z-index: 10;
+    position: fixed;
+    &.shadervisible{
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.2);
+    }
+    background-color: rgba(0,0,0,0.0);
+    transition: background-color 0.2s;
+  }
+  .fab-button {
+    z-index: 11;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #0d682a;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+    .Ripple {
+      border-radius: 50%;
+    }
+    .fa {
+      color: white;
+      position: absolute;
+      font-size: 2.5em;
+      top: 13px;
+      left: 13px;
+    }
+  }
+
+  .bullet {
+    transition: right 0.5s;
+    right: -500px;
+    &.shadervisible, &.shadervisible:nth-child(odd){
+      right: 65px;
+    }
+    &:nth-child(odd) {
+      transition-delay: 0.1s;
+      bottom: 200px;
+    }
+    bottom: 130px;
+    z-index: 11;
+    .text {
+      background-color: white;
+      padding: 5px 30px;
+      display: inline-block;
+      box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+      margin-right: 15px;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+    .box {
+      background-color: #026eaf;
+      color: white;
+      padding: 5px;
+      display: inline-block;
+      box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      width: 35px;
+      padding-left: 10px;
+      font-size: 1.3em;
+    }
+    position: fixed;
+  }
+  .Popup {
+    .textarea-wrapper {
+      padding-left: 15px;
+      padding-right: 15px;
+      textarea {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+        min-height: 300px;
+
+      }
+    }
+    .Popup-header {
+      padding: 20px 15px;
+      background-color: @HeaderColor;
+      margin-top: -21px;
+      margin-left: -1px;
+      margin-right: -1px;
+      margin-bottom: 25px;
+      h3 {
+        color: white;
+      }
+    }
+    .hint {
+      border: 1px solid rgba(0, 128, 0, 0.2);
+      background-color: rgba(0, 128, 0, 0.1);
+      padding: 3px 30px;
+      border-radius: 3px;
+    }
+    .references {
+      padding-left: 15px;
+      h4 {
+        padding-left: 0;
+      }
+      .reference {
+        display: inline-block;
+        font-weight: 500;
+        border-bottom: 3px solid green;
+      }
+      .reference:nth-child(even):before {
+        content: '-';
+        display: inline-block;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+    .add-reference {
+      margin-right: 15px;
+      padding: 8px 20px;
+      display: inline-block;
+      position: relative;
+      border: 1px solid #c3c3c3;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
+    .info {
+      padding-left: 15px;
+      font-weight: 400;
+    }
+  }
+}

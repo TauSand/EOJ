@@ -1,6 +1,6 @@
 Backbone.history.start({pushState: true});
 
-angular.module('EOJ', ['databaseservice','main', 'header', 'mymessages', 'tabsModule', 'careplan', 'assesment', 'router', 'assignment', 'plan', 'personal', 'dropdown', 'ripple', 'popup', 'sul', 'selectlinkpopup', 'citizenplan']);
+angular.module('EOJ', ['databaseservice','main', 'header', 'mymessages', 'tabsModule', 'careplan', 'assesment', 'router', 'assignment', 'plan', 'personal', 'dropdown', 'ripple', 'popup', 'sul', 'selectlinkpopup', 'citizenplan', 'fab']);
 
 $(window).keydown(function (e) {
     if (e.keyCode == 116) {
