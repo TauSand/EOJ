@@ -1,7 +1,7 @@
 <div class="Mymessages card">
     <h5>Mine sendte beskeder</h5>
-    <div ng-if="!messages" class="no-messages"><i class="fa fa-hand-pointer-o"></i> Du har ingen sendte beskeder</div>
-    <div ng-if="messages" class="messages">
+    <div ng-if="messages.length == 0" class="no-messages"><i class="fa fa-hand-pointer-o"></i> Du har ingen sendte beskeder</div>
+    <div ng-if="messages.length > 0" class="messages">
         <div class="message" ng-repeat="message in messages">
             <h6 class="text">{{message.text}}</h6>
             <div class="citizen"><i class="fa fa-envelope"></i> {{message.citizen}}</div>

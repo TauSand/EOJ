@@ -595,7 +595,7 @@ function getInitData() {
         },
         {
             _id: 'outbox',
-            messages: [{text: "Hente toiletpapir", citizen: '1'}, {text: "skifte ble", citizen: '1'}]
+            messages: []
         }
     ]
         ;
